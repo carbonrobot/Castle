@@ -5,39 +5,6 @@
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <ul class="nav nav-pills">
-            <li class="active"><a href="#projects" data-toggle="tab">Projects</a></li>
-            <li><a href="#teams" data-toggle="tab">Teams</a></li>
-        </ul>
-
-        <div class="tab-content">
-            <div class="tab-pane active" id="projects">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <div class="clearfix">
-                            <div class="pull-left">
-                                Projects <span class="small">(@Model.Projects.Count())</span>
-                            </div>
-                            <div class="pull-right">
-                                <a href="/projects/new" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span> New Project</a>
-                            </div>
-                        </div>
-                    </div>
-                    <ul class="list-group">
-                        @foreach (var project in Model.Projects) { 
-                        <li class="list-group-item">
-                            <a href="/projects/@project.Id/@project.Name">@project.FullName</a>
-                        </li>
-                        }
-                    </ul>
-                </div>
-            </div>
-            <div class="tab-pane" id="teams">
-
-            </div>
-        </div>
-    </div>
 
     <div class="col-md-8">
         <p>
@@ -64,6 +31,41 @@
         </p>
 
         <p><a class="btn btn-default" href="/source">show more</a></p>
+    </div>
+
+    <div class="col-md-4">
+        <ul class="nav nav-pills">
+            <li class="active"><a href="#projects" data-toggle="tab">Projects</a></li>
+            <li><a href="#teams" data-toggle="tab">Teams</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="projects">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                Projects <span class="small">(@Model.Projects.Count())</span>
+                            </div>
+                            <div class="pull-right">
+                                <a href="/projects/new" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span> New Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-group">
+                        @foreach (var project in Model.Projects)
+                        {
+                            <li class="list-group-item">
+                                <a href="/projects/@project.Id/@project.Name">@project.FullName</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-pane" id="teams">
+
+            </div>
+        </div>
     </div>
 </div>
 @helper media(string topic, string summary, string path, string link)
