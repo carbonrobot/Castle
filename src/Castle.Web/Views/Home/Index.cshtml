@@ -1,0 +1,65 @@
+﻿@model Castle.Web.Models.Home.IndexViewModel
+
+<div class="page-header">
+    <h1>Castle <small>Documentation that doesn't suck.</small></h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Recent Commits</h2>
+        
+        <p>
+            @foreach (var entry in Model.RecentHistory)
+            {
+                <div class="media">
+                    <a class="pull-left">
+                        <img src="/content/images/ninja-64.png" alt="@entry.Author" class="media-object" />
+                    </a>
+                    <div class="media-body">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <span class="label label-default">@entry.RelativeTime</span>
+                                <a href="/people/@entry.Author">@entry.Author</a> <span class="text-muted">committed @entry.ChangedPathCount changes</span>
+                            </div>
+                            <div class="pull-right">
+                                <span class="glyphicon glyphicon-tasks"></span> <a href="/">rev @entry.Revision</a>
+                            </div>
+                        </div>
+                        <div class="drop small">@entry.LogMessage</div>
+                    </div>
+                </div>
+            }
+        </p>
+
+        <p><a class="btn btn-default" href="/source">show more</a></p>
+    </div>
+    <div class="col-md-6">
+        <h2>Recent Discussion</h2>
+        
+        <p>
+            <div class="media">
+                <a class="pull-left">
+                    <img src="/content/images/ninja-64.png" alt="" class="media-object" />
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">Quickservice</h4>
+                    Updated the colors on all site headers
+                </div>
+            </div>
+        </p>
+
+        <p><a class="btn btn-default" href="/source">show more</a></p>
+    </div>
+</div>
+@helper media(string topic, string summary, string path, string link) { 
+    <div class="media">
+        <a class="pull-left">
+            <img src="/content/images/ninja-64.png" alt="" class="media-object" />
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">@topic</h4>
+            @summary
+            <br/><span class="label label-default">30 mins ago</span> <a href="@path"><span class="label label-default">@link</span></a>
+</div>
+    </div>
+}

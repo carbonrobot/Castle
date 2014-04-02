@@ -1,0 +1,20 @@
+﻿.drop {
+    margin-top: 10px;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar-logo{
+    float: left;
+    width: 32px;
+    height: 32px;
+    margin-top: 8px;
+    margin-right: 20px;
+}
