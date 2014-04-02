@@ -48,13 +48,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="SharpSvn, Version=1.8005.2830.15589, Culture=neutral, PublicKeyToken=d729672594885a28, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SharpSvn.1.8-x86.1.8005.2830\lib\net20\SharpSvn.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpSvn.UI, Version=1.8005.2830.15589, Culture=neutral, PublicKeyToken=33789aa53ca44aa9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SharpSvn.1.8-x86.1.8005.2830\lib\net20\SharpSvn.UI.dll</HintPath>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.2.1.0\lib\net45\NLog.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -128,6 +123,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logging\NLogLog.cs" />
     <Compile Include="Models\Home\IndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -155,10 +151,6 @@
     <Content Include="Scripts\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery-2.1.0.min.js" />
     <Content Include="Scripts\modernizr-2.7.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.matchmedia.addListener.js" />
-    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
-    <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

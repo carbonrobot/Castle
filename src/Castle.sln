@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle.Services", "Castle.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle.Domain", "Castle.Domain\Castle.Domain.csproj", "{52EC6D51-0D2C-48FD-83EF-B416756C9828}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle.Services.Providers.Svn", "Castle.Services.Providers.Svn\Castle.Services.Providers.Svn.csproj", "{B539D392-E9CF-4CDA-B830-C987066D4C6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle.Domain.Data", "Castle.Domain.Data\Castle.Domain.Data.csproj", "{CD39F4E4-7D2A-4EFB-970F-B6A211FA3475}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{52EC6D51-0D2C-48FD-83EF-B416756C9828}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52EC6D51-0D2C-48FD-83EF-B416756C9828}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52EC6D51-0D2C-48FD-83EF-B416756C9828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B539D392-E9CF-4CDA-B830-C987066D4C6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B539D392-E9CF-4CDA-B830-C987066D4C6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B539D392-E9CF-4CDA-B830-C987066D4C6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B539D392-E9CF-4CDA-B830-C987066D4C6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD39F4E4-7D2A-4EFB-970F-B6A211FA3475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD39F4E4-7D2A-4EFB-970F-B6A211FA3475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD39F4E4-7D2A-4EFB-970F-B6A211FA3475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD39F4E4-7D2A-4EFB-970F-B6A211FA3475}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

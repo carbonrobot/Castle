@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Castle.Domain;
 using Castle.Services;
 
 namespace Castle.Web.Controllers
@@ -11,17 +12,18 @@ namespace Castle.Web.Controllers
     {
         public ActionResult Index()
         {
-            var options = new SourceProviderOptions()
-            {
-                UserName = "CXBrown",
-                Password = "Discoverywins14$$"
-            };
-            var provider = new SourceProvider(options);
-            var history = provider.GetRecentHistory();
+            //var options = new SourceProviderOptions()
+            //{
+            //    UserName = "CXBrown",
+            //    Password = "Discoverywins14$$"
+            //};
+            //var provider = new SourceProvider(options);
+            //var history = provider.GetRecentHistory();
 
             var model = new Models.Home.IndexViewModel()
             {
-                RecentHistory = history.OrderByDescending(x => x.Time)
+                //RecentHistory = history.OrderByDescending(x => x.Time)
+                RecentHistory = new List<SourceLogEntry>()
             };
             return View(model);
         }
