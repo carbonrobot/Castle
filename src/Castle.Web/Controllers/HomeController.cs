@@ -10,6 +10,13 @@ namespace Castle.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ProjectService ProjectService;
+
+        public HomeController(ProjectService projService)
+        {
+            this.ProjectService = projService;
+        }
+
         public ActionResult Index()
         {
             //var options = new SourceProviderOptions()
@@ -20,9 +27,11 @@ namespace Castle.Web.Controllers
             //var provider = new SourceProvider(options);
             //var history = provider.GetRecentHistory();
 
+            var projectResponse = this.ProjectService.GetProjects();
+
             var model = new Models.Home.IndexViewModel()
             {
-                //RecentHistory = history.OrderByDescending(x => x.Time)
+                Projects = projectResponse.Result,
                 RecentHistory = new List<SourceLogEntry>()
             };
             return View(model);

@@ -5,12 +5,12 @@ namespace Castle.Domain
     /// <summary>
     /// An arbitrary group of projects
     /// </summary>
-    public class ProjectGroup
+    public class Team : Entity
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProjectGroup"/> class.
+        /// Initializes a new instance of the <see cref="Team"/> class.
         /// </summary>
-        public ProjectGroup()
+        public Team()
         {
             this.Projects = new List<Project>();
         }

@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 using Castle.Domain;
 using SharpSvn;
 
-namespace Castle.Services
+namespace Castle.Services.Providers
 {
-    public class SourceProvider
+    public class SvnSourceProvider : ISourceProvider
     {
-        public SourceProvider(SourceProviderOptions options)
+        public SvnSourceProvider() { }
+        public SvnSourceProvider(SvnSourceProviderOptions options)
         {
             this.options = options;
         }
@@ -89,6 +90,6 @@ namespace Castle.Services
             return client;
         }
 
-        public SourceProviderOptions options { get; set; }
+        public SvnSourceProviderOptions options { get; set; }
     }
 }

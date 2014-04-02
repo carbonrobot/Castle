@@ -15,7 +15,7 @@ namespace Castle.Services
         /// <param name="context">The repository data context.</param>
         protected DataService(IDataContext context)
         {
-            this.Context = context;
+            this.DataContext = context;
         }
 
         /// <summary>
@@ -67,6 +67,6 @@ namespace Castle.Services
             return response;
         }
 
-        private IDataContext Context;
+        protected IDataContext DataContext;
     }
 }

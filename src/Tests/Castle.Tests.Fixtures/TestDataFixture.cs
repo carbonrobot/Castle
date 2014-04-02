@@ -6,7 +6,7 @@ using Castle.Domain.Data;
 
 namespace Castle.Tests.Fixtures
 {
-    public class TestDataFixture : DropCreateDatabaseIfModelChanges<DataContext>
+    public class TestDataFixture : DropCreateDatabaseAlways<DataContext>
     {
         protected override void Seed(DataContext context)
         {
@@ -16,7 +16,7 @@ namespace Castle.Tests.Fixtures
 
         private void ProjectsFakeyFakey(DataContext context)
         {
-            var interactive = new ProjectGroup() { Name = "Interactive" };
+            var interactive = new Team() { Name = "Interactive" };
             interactive.Projects.Add(new Project()
             {
                 Name = "Quickservice"
@@ -26,36 +26,40 @@ namespace Castle.Tests.Fixtures
                 Name = "Mobile Landing Pages"
             });
 
-            var poladmin = new ProjectGroup() { Name = "Policy Admin" };
-            interactive.Projects.Add(new Project()
+            var poladmin = new Team() { Name = "Policy Admin" };
+            poladmin.Projects.Add(new Project()
             {
                 Name = "Phoenix"
             });
-            interactive.Projects.Add(new Project()
+            poladmin.Projects.Add(new Project()
             {
                 Name = "Billing Web Api"
             });
 
-            var docmgt = new ProjectGroup() { Name = "Document Management" };
-            interactive.Projects.Add(new Project()
+            var docmgt = new Team() { Name = "Document Management" };
+            docmgt.Projects.Add(new Project()
             {
                 Name = "Ucm Content System"
             });
-            interactive.Projects.Add(new Project()
+            docmgt.Projects.Add(new Project()
             {
                 Name = "Document Web Api"
             });
 
-            var bi = new ProjectGroup() { Name = "Business Intelligence" };
-            interactive.Projects.Add(new Project()
+            var bi = new Team() { Name = "Business Intelligence" };
+            bi.Projects.Add(new Project()
             {
                 Name = "Reporting Tools"
             });
-            interactive.Projects.Add(new Project()
+            bi.Projects.Add(new Project()
             {
                 Name = "Financial Database"
             });
 
+            context.ProjectGroups.Add(interactive);
+            context.ProjectGroups.Add(poladmin);
+            context.ProjectGroups.Add(docmgt);
+            context.ProjectGroups.Add(bi);
         }
     }
 }

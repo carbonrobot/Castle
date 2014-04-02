@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using Castle.Services;
+using Castle.Services.Providers;
 
 namespace Castle.Domain.Data
 {
@@ -18,7 +19,7 @@ namespace Castle.Domain.Data
         }
 
         public DbSet<Project> Projects { get; set; }
-        public DbSet<ProjectGroup> ProjectGroups { get; set; }
+        public DbSet<Team> ProjectGroups { get; set; }
 
         #region Helpers
 
