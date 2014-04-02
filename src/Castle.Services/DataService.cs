@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Castle.Domain;
 using Castle.Services.Logging;
+using Castle.Services.Providers;
 
 namespace Castle.Services
 {
@@ -65,8 +66,6 @@ namespace Castle.Services
             }
             return response;
         }
-
-        
 
         private IDataContext Context;
     }

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Castle.Domain;
 
-namespace Castle.Services
+namespace Castle.Services.Providers
 {
     public interface IDataContext
     {

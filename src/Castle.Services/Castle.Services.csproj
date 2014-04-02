@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataService.cs" />
-    <Compile Include="IDataContext.cs" />
+    <Compile Include="Providers\IDataContext.cs" />
     <Compile Include="Logging\ILog.cs" />
     <Compile Include="Logging\Log.cs" />
     <Compile Include="Logging\LogExtensions.cs" />
