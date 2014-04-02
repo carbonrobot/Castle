@@ -12,11 +12,13 @@ namespace Castle.Domain.Data
         /// <summary>
         /// Constructs a new instance of a <see cref="DataContext"/>
         /// </summary>
-        public DataContext()
-            : base()
+        public DataContext() : base()
         {
             this.Configuration.LazyLoadingEnabled = false;
         }
+
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<ProjectGroup> ProjectGroups { get; set; }
 
         #region Helpers
 
