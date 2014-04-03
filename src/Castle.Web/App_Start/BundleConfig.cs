@@ -5,24 +5,30 @@ namespace Castle.Web
 {
     public class BundleConfig
     {
-        // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                    "~/Scripts/vendor/jquery-{version}.js"));
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+                    "~/Scripts/vendor/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                    "~/Scripts/vendor/bootstrap.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                    "~/Scripts/vendor/angular.js",
+                    "~/Scripts/vendor/angular-route.js",
+                    "~/Scripts/vendor/angular-resource.js",
+                    "~/Scripts/vendor/angular-animate.js",
+                    "~/Scripts/app/app.js",
+                    "~/Scripts/app/services/*.js",
+                    "~/Scripts/app/controllers/*.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/css/bootstrap/bootstrap.css",
-                      "~/Content/css/castle.css",
-                      "~/Content/css/castle-loader.css"));
+                    "~/Content/css/bootstrap/bootstrap.css",
+                    "~/Content/css/castle.css",
+                    "~/Content/css/castle-loader.css"));
         }
     }
 }

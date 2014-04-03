@@ -1,41 +1,37 @@
 ﻿@model Castle.Web.Models.Home.IndexViewModel
 
 <div class="page-header">
-    <h1>Castle <small>Documentation that doesn't suck.</small></h1>
+    <h1>Castle <small>Source control documentation that doesn't suck.</small></h1>
 </div>
 
 <div class="row">
 
-    <div class="col-md-8">
-        <div class="loading-group clearfix">
+    <div class="col-md-8" data-ng-controller="HomeController">
+        <div class="loading-group clearfix" data-ng-if="loading">
             @Html.Partial("_Loader")
             <div class="loading-group-msg">
                 Creating a link to the past ...
             </div>
         </div>
-        <p>
-            @*@foreach (var entry in Model.RecentHistory)
-            {
-                <div class="media">
-                    <a class="pull-left">
-                        <img src="/content/images/ninja-64.png" alt="@entry.Author" class="media-object" />
-                    </a>
-                    <div class="media-body">
-                        <div class="clearfix">
-                            <div class="pull-left">
-                                <span class="label label-default">@entry.RelativeTime</span>
-                                <a href="/people/@entry.Author">@entry.Author</a> <span class="text-muted">committed @entry.ChangedPathCount changes</span>
-                            </div>
-                            <div class="pull-right">
-                                <span class="glyphicon glyphicon-tasks"></span> <a href="/">rev @entry.Revision</a>
-                            </div>
+        <div class="source-history ng-cloak">
+            <div class="media animate" data-ng-repeat="entry in history">
+                <a class="pull-left">
+                    <img src="/content/images/ninja-64.png" alt="{{ entry.Author }}" class="media-object" />
+                </a>
+                <div class="media-body">
+                    <div class="clearfix">
+                        <div class="pull-left">
+                            <span class="label label-default">{{ entry.RelativeTime }}</span>
+                            <a href="/people/{{entry.Author}}">{{ entry.Author }}</a> <span class="text-muted">committed {{ entry.ChangedPathCount }} changes</span>
                         </div>
-                        <div class="drop small">@entry.LogMessage</div>
+                        <div class="pull-right">
+                            <span class="glyphicon glyphicon-tasks"></span> <a href="/">rev {{ entry.Revision }}</a>
+                        </div>
                     </div>
+                    <div class="drop small">{{ entry.LogMessage }}</div>
                 </div>
-            }*@
-            @*<a class="btn btn-default" href="/source">show more</a>*@
-        </p>
+            </div>
+        </div>
     </div>
 
     <div class="col-md-4">

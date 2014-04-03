@@ -17,13 +17,13 @@ namespace Castle.Services.Providers
             this.options = options;
         }
 
-        public IEnumerable<SourceLogEntry> GetRecentHistory()
+        public IEnumerable<SourceLogEntry> GetRecentHistory(int days)
         {
             var list = new List<SourceLogEntry>();
 
             using (var client = CreateSvnClient())
             {
-                var start = DateTime.Now.AddDays(-7);
+                var start = DateTime.Now.AddDays(days * -1);
                 var end = DateTime.Now.AddDays(1);
                 var range = new SvnRevisionRange(new SvnRevision(start), new SvnRevision(end));
                 var baseUri = "https://subversionprod/svn/";

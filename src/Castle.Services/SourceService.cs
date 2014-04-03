@@ -26,8 +26,8 @@ namespace Castle.Services
         {
             Func<IEnumerable<SourceLogEntry>> func = () =>
             {
-                var history = this.SourceProvider.GetRecentHistory();
-                return history;
+                var history = this.SourceProvider.GetRecentHistory(days);
+                return history.OrderByDescending(x => x.Time);
             };
             return this.Execute(func);
         }

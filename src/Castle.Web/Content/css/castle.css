@@ -22,3 +22,7 @@ body {
 .tab-content {
     padding-top: 10px;
 }
+
+.ng-cloak {
+    display: none;
+}

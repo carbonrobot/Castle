@@ -7,7 +7,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body data-ng-app="castle.app">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -21,6 +21,7 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="@IsActive("projects")"><a href="/projects">Projects</a></li>
+                <li class="@IsActive("source")"><a href="/source">Source</a></li>
             </ul>
             <p class="navbar-text navbar-right">@User.Identity.Name</p>
         </div>
@@ -35,6 +36,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/app")
     @RenderSection("scripts", required: false)
 </body>
 </html>

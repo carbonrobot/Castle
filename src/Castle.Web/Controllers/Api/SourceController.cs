@@ -22,7 +22,7 @@ namespace Castle.Web.Controllers.Api
         [Route("history/recent")]
         public IEnumerable<Domain.SourceLogEntry> RecentHistory()
         {
-            var response = this.SourceService.GetRecentHistory(7);
+            var response = this.SourceService.GetRecentHistory(1);
             if (response.HasError)
             {
                 throw new HttpResponseException(HttpStatusCode.InternalServerError);
