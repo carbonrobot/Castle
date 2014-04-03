@@ -37,7 +37,7 @@
             {
                 if (this.Team != null)
                 {
-                    return string.Format("{0} / {1}", this.Team.Name, this.Name);
+                    return string.Format("{0} / {1}", this.Team.Nickname, this.Name);
                 }
                 return this.Name;
             }

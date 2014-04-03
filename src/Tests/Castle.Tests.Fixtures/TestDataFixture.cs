@@ -16,7 +16,7 @@ namespace Castle.Tests.Fixtures
 
         private void ProjectsFakeyFakey(DataContext context)
         {
-            var interactive = new Team() { Name = "Interactive" };
+            var interactive = new Team() { Name = "Interactive", Nickname = "INA" };
             interactive.Projects.Add(new Project()
             {
                 Name = "Quickservice"
@@ -26,7 +26,7 @@ namespace Castle.Tests.Fixtures
                 Name = "Mobile Landing Pages"
             });
 
-            var poladmin = new Team() { Name = "Policy Admin" };
+            var poladmin = new Team() { Name = "Policy Admin", Nickname = "POL" };
             poladmin.Projects.Add(new Project()
             {
                 Name = "Phoenix"
@@ -36,7 +36,7 @@ namespace Castle.Tests.Fixtures
                 Name = "Billing Web Api"
             });
 
-            var docmgt = new Team() { Name = "Document Management" };
+            var docmgt = new Team() { Name = "Document Management", Nickname = "DOC" };
             docmgt.Projects.Add(new Project()
             {
                 Name = "Ucm Content System"
@@ -46,7 +46,7 @@ namespace Castle.Tests.Fixtures
                 Name = "Document Web Api"
             });
 
-            var bi = new Team() { Name = "Business Intelligence" };
+            var bi = new Team() { Name = "Business Intelligence", Nickname = "INT" };
             bi.Projects.Add(new Project()
             {
                 Name = "Reporting Tools"

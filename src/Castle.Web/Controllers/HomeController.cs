@@ -23,7 +23,8 @@ namespace Castle.Web.Controllers
 
             var model = new Models.Home.IndexViewModel()
             {
-                Projects = projectResponse.Result
+                Projects = projectResponse.Result,
+                Teams = projectResponse.Result.Select(x => x.Team).Distinct()
             };
             return View(model);
         }

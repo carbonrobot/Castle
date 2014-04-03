@@ -229,6 +229,7 @@
     <Content Include="Scripts\vendor\jquery-2.1.0.min.map" />
     <Content Include="Views\Projects\Index.cshtml" />
     <Content Include="Views\Shared\_Loader.cshtml" />
+    <Content Include="Views\Source\_History.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Castle.Domain.Data\Castle.Domain.Data.csproj">

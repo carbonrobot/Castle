@@ -1,0 +1,24 @@
+﻿<div class="loading-group clearfix" data-ng-if="loadingHistory">
+    @Html.Partial("_Loader")
+    <div class="loading-group-msg">
+        Making a link to the past...
+    </div>
+</div>
+<div class="source-history ng-cloak">
+    <div class="media animate" data-ng-repeat="entry in history">
+        <a class="pull-left">
+            <img src="/content/images/ninja-64.png" alt="{{ entry.Author }}" class="media-object" />
+        </a>
+        <div class="media-body">
+            <div class="clearfix">
+                <div class="pull-left">
+                    <strong><a href="/people/{{entry.Author}}">{{ entry.Author }}</a> changed {{ entry.ChangedPathCount }} files <span class="glyphicon glyphicon-random"></span> <a href="#">{{ entry.Revision }}</a></strong>
+                </div>
+                <div class="pull-right">
+                    <span class="text-muted">{{ entry.RelativeTime }}</span>
+                </div>
+            </div>
+            <div class="drop">{{ entry.LogMessage }}</div>
+        </div>
+    </div>
+</div>

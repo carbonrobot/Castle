@@ -6,35 +6,7 @@
 
 <div class="row">
 
-    <div class="col-md-8" data-ng-controller="HomeController">
-        <div class="loading-group clearfix" data-ng-if="loading">
-            @Html.Partial("_Loader")
-            <div class="loading-group-msg">
-                Creating a link to the past ...
-            </div>
-        </div>
-        <div class="source-history ng-cloak">
-            <div class="media animate" data-ng-repeat="entry in history">
-                <a class="pull-left">
-                    <img src="/content/images/ninja-64.png" alt="{{ entry.Author }}" class="media-object" />
-                </a>
-                <div class="media-body">
-                    <div class="clearfix">
-                        <div class="pull-left">
-                            <span class="label label-default">{{ entry.RelativeTime }}</span>
-                            <a href="/people/{{entry.Author}}">{{ entry.Author }}</a> <span class="text-muted">committed {{ entry.ChangedPathCount }} changes</span>
-                        </div>
-                        <div class="pull-right">
-                            <span class="glyphicon glyphicon-tasks"></span> <a href="/">rev {{ entry.Revision }}</a>
-                        </div>
-                    </div>
-                    <div class="drop small">{{ entry.LogMessage }}</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4">
+    <div class="col-md-4 col-md-push-8">
         <ul class="nav nav-pills">
             <li class="active"><a href="#projects" data-toggle="tab">Projects</a></li>
             <li><a href="#teams" data-toggle="tab">Teams</a></li>
@@ -64,21 +36,31 @@
                 </div>
             </div>
             <div class="tab-pane" id="teams">
-
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                Teams <span class="small">(@Model.Teams.Count())</span>
+                            </div>
+                            <div class="pull-right">
+                                <a href="/teams/new" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span> New Team</a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-group">
+                        @foreach (var team in Model.Teams)
+                        {
+                            <li class="list-group-item">
+                                <a href="/team/@team.Id/@team.Nickname">@team.Name</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
-@helper media(string topic, string summary, string path, string link)
-{
-    <div class="media">
-        <a class="pull-left">
-            <img src="/content/images/ninja-64.png" alt="" class="media-object" />
-        </a>
-        <div class="media-body">
-            <h4 class="media-heading">@topic</h4>
-            @summary
-            <br /><span class="label label-default">30 mins ago</span> <a href="@path"><span class="label label-default">@link</span></a>
-        </div>
+
+    <div class="col-md-8 col-md-pull-4" data-ng-controller="HomeController">
+        @Html.Partial("~/views/source/_history.cshtml")
     </div>
-}
+</div>

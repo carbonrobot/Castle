@@ -20,6 +20,12 @@ namespace Castle.Domain
         /// </summary>
         /// <value>The name.</value>
         public string Name { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the team nickname
+        /// </summary>
+        /// <value>The nickname.</value>
+        public string Nickname { get; set; }
 
         /// <summary>
         /// Gets the projects.
