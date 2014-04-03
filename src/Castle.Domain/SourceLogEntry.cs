@@ -13,6 +13,8 @@ namespace Castle.Domain
         public string LogMessage { get; set; }
         public long Revision { get; set; }
         public DateTime Time { get; set; }
+        public string Branch { get; set; }
+
         public string RelativeTime
         {
             get
@@ -20,7 +22,6 @@ namespace Castle.Domain
                 return RelativeDate(this.Time);
             }
         }
-
         private string RelativeDate(DateTime dt)
         {
             var ts = new TimeSpan(DateTime.UtcNow.Ticks - dt.Ticks);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,7 @@ namespace Castle.Services.Providers
                 var baseUri = "https://subversionprod/svn/";
 
                 // TODO: try to get the repos dynamo
+                // TODO: recent history should be all repos combined from date range
                 var repos = new string[] {
                     "AHPTest",
                     "ART",
@@ -63,13 +65,16 @@ namespace Castle.Services.Providers
 
                         foreach (var logEvent in logitems)
                         {
+                            
+
                             list.Add(new SourceLogEntry()
                             {
                                 Author = logEvent.Author,
                                 LogMessage = logEvent.LogMessage,
                                 Revision = logEvent.Revision,
                                 Time = logEvent.Time,
-                                ChangedPathCount = logEvent.ChangedPaths.Count
+                                ChangedPathCount = logEvent.ChangedPaths.Count,
+                                Branch = TryGetBranchName(logEvent)
                             });
                         }
                     }
@@ -81,6 +86,21 @@ namespace Castle.Services.Providers
             };
 
             return list;
+        }
+
+        private string TryGetBranchName(SvnLogEventArgs logEvent)
+        {
+            var branch = "trunk";
+            if (logEvent.ChangedPaths != null && logEvent.ChangedPaths.Count > 0)
+            {
+                if (logEvent.ChangedPaths[0].Path.Contains("branches"))
+                {
+                    // grab the branch name from the first name after "branches"
+                    var folders = logEvent.ChangedPaths[0].Path.Split('/').ToList();
+                    branch = folders[folders.IndexOf("branches") + 1];
+                }
+            }
+            return branch;
         }
 
         private SvnClient CreateSvnClient()
