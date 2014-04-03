@@ -7,7 +7,12 @@
 <div class="row">
 
     <div class="col-md-8">
-        <div class="alert alert-info">Loading...</div>
+        <div class="loading-group clearfix">
+            @Html.Partial("_Loader")
+            <div class="loading-group-msg">
+                Creating a link to the past ...
+            </div>
+        </div>
         <p>
             @*@foreach (var entry in Model.RecentHistory)
             {

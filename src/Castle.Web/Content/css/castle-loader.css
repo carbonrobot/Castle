@@ -1,0 +1,153 @@
+﻿.loading-group {
+    background: rgb(254, 255, 245);
+    color: #777;
+}
+.loading-group-msg {
+    float: left;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.loading-wrap {
+    float: left;
+    width: 60px;
+    height: 60px;
+    background: #777;
+    -moz-animation: rotation ease-in-out 2s infinite;
+    -webkit-animation: rotation ease-in-out 2s infinite;
+    -ms-animation: rotation ease-in-out 2s infinite;
+    animation: rotation ease-in-out 2s infinite;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+}
+
+.triangle1, .triangle2, .triangle3 {
+    border-width: 0 20px 30px 20px;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom-color: gold;
+    height: 0;
+    width: 0;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+    -moz-animation: fadecolor 2s 1s infinite;
+    -webkit-animation: fadecolor 2s 1s infinite;
+    -ms-animation: fadecolor 2s 1s infinite;
+    animation: fadecolor 2s 1s infinite;
+}
+
+.triangle2, .triangle3 {
+    content: '';
+    top: 20px;
+    left: 30px;
+    -moz-animation-delay: 1.1s;
+    -webkit-animation-delay: 1.1s;
+    -ms-animation-delay: 1.1s;
+    animation-delay: 1.1s;
+}
+
+.triangle3 {
+    left: -10px;
+    -moz-animation-delay: 1.2s;
+    -webkit-animation-delay: 1.2s;
+    -ms-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+}
+
+@-moz-keyframes rotation {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+
+    20% {
+        -moz-transform: rotate(360deg);
+    }
+
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotation {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    20% {
+        -webkit-transform: rotate(360deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-ms-keyframes rotation {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    20% {
+        -webkit-transform: rotate(360deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes fadecolor {
+    0% {
+        border-bottom-color: #eee;
+    }
+
+    100% {
+        border-bottom-color: gold;
+    }
+}
+
+@-webkit-keyframes fadecolor {
+    0% {
+        border-bottom-color: #eee;
+    }
+
+    100% {
+        border-bottom-color: gold;
+    }
+}
+
+@-ms-keyframes fadecolor {
+    0% {
+        border-bottom-color: #eee;
+    }
+
+    100% {
+        border-bottom-color: gold;
+    }
+}
+
+@keyframes fadecolor {
+    0% {
+        border-bottom-color: #eee;
+    }
+
+    100% {
+        border-bottom-color: gold;
+    }
+}
