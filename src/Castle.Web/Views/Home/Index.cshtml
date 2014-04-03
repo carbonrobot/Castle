@@ -7,8 +7,9 @@
 <div class="row">
 
     <div class="col-md-8">
+        <div class="alert alert-info">Loading...</div>
         <p>
-            @foreach (var entry in Model.RecentHistory)
+            @*@foreach (var entry in Model.RecentHistory)
             {
                 <div class="media">
                     <a class="pull-left">
@@ -27,10 +28,9 @@
                         <div class="drop small">@entry.LogMessage</div>
                     </div>
                 </div>
-            }
+            }*@
+            @*<a class="btn btn-default" href="/source">show more</a>*@
         </p>
-
-        <p><a class="btn btn-default" href="/source">show more</a></p>
     </div>
 
     <div class="col-md-4">

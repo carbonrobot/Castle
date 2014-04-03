@@ -9,6 +9,5 @@ namespace Castle.Web.Models.Home
     public class IndexViewModel
     {
         public IEnumerable<Project> Projects { get; set; }
-        public IEnumerable<SourceLogEntry> RecentHistory { get; set; }
     }
 }

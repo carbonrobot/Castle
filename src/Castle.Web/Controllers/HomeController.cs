@@ -19,20 +19,11 @@ namespace Castle.Web.Controllers
 
         public ActionResult Index()
         {
-            //var options = new SourceProviderOptions()
-            //{
-            //    UserName = "CXBrown",
-            //    Password = "Discoverywins14$$"
-            //};
-            //var provider = new SourceProvider(options);
-            //var history = provider.GetRecentHistory();
-
             var projectResponse = this.ProjectService.GetProjects();
 
             var model = new Models.Home.IndexViewModel()
             {
-                Projects = projectResponse.Result,
-                RecentHistory = new List<SourceLogEntry>()
+                Projects = projectResponse.Result
             };
             return View(model);
         }

@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataService.cs" />
+    <Compile Include="DomainService.cs" />
     <Compile Include="ProjectService.cs" />
     <Compile Include="Providers\IDataContext.cs" />
     <Compile Include="Logging\ILog.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ISourceProvider.cs" />
     <Compile Include="ServiceResponse.cs" />
+    <Compile Include="SourceService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Castle.Domain\Castle.Domain.csproj">
