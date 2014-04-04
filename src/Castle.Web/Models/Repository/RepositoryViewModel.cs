@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Castle.Domain;
 
-namespace Castle.Web.Models.Home
+namespace Castle.Web.Models.Repository
 {
     public class RepositoryViewModel
     {
-        public Repository Repository { get; set; }
+        public Domain.Repository Repository { get; set; }
     }
 }
