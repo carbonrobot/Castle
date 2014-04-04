@@ -66,6 +66,23 @@ namespace Castle.Services
             return this.Execute(func);
         }
 
+        /// <summary>
+        /// Gets the recent change history for all configured repositories.
+        /// </summary>
+        /// <param name="key">The repository key.</param>
+        /// <param name="days">The number of days to include.</param>
+        /// <returns>ServiceResponse&lt;IEnumerable&lt;SourceLogEntry&gt;&gt;.</returns>
+        public ServiceResponse<IEnumerable<SourceLogEntry>> GetRepositoryHistory(string key, int days)
+        {
+            Func<IEnumerable<SourceLogEntry>> func = () =>
+            {
+                var repository = this.DataContext.AsQueryable<Repository>().Single(x => x.Key.Equals(key, StringComparison.InvariantCultureIgnoreCase));
+                var history = this.SourceProvider.GetHistory(repository.Path, days);
+                return history.OrderByDescending(x => x.Time);
+            };
+            return this.Execute(func);
+        }
+
         private readonly ISourceProvider SourceProvider;
     }
 }

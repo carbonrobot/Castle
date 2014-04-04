@@ -14,22 +14,22 @@
                         Repositories <span class="small">(@Model.RepositoryList.Count())</span>
                     </div>
                     <div class="pull-right">
-                        <a href="/add" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span> New Repository</a>
+                        <a href="/new" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span> New Repository</a>
                     </div>
                 </div>
             </div>
             <ul class="list-group">
-                @foreach (var repo in Model.RepositoryList)
+                @foreach (var item in Model.RepositoryList)
                 {
                     <li class="list-group-item">
-                        <a href="/@repo.Key">@repo.Name</a>
+                        <a href="/@item.Key">@item.Name</a>
                     </li>
                 }
             </ul>
         </div>
     </div>
 
-    <div class="col-md-8 col-md-pull-4" data-ng-controller="HomeController">
-        @Html.Partial("~/views/source/_history.cshtml")
+    <div class="col-md-8 col-md-pull-4">
+        
     </div>
 </div>

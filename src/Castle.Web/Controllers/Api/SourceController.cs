@@ -11,27 +11,24 @@ namespace Castle.Web.Controllers.Api
     [RoutePrefix("api/v1/source")]
     public class SourceController : ApiController
     {
-        private readonly SourceService SourceService;
+        private readonly DomainService DomainService;
 
-        public SourceController(SourceService service)
+        public SourceController(DomainService service)
         {
-            this.SourceService = service;
+            this.DomainService = service;
         }
 
         [HttpGet]
-        [Route("history/recent")]
-        public IEnumerable<Domain.SourceLogEntry> RecentHistory()
+        [Route("{repositoryKey}/history/recent")]
+        public IEnumerable<Domain.SourceLogEntry> RecentHistory(string repositoryKey)
         {
-            var response = this.SourceService.GetRecentHistory(1);
+            var response = this.DomainService.GetRepositoryHistory(repositoryKey, 7);
             if (response.HasError)
-            {
                 throw new HttpResponseException(HttpStatusCode.InternalServerError);
-            }
-            if (response.Result == null)
-            {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
-            }
 
+            if (response.Result == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            
             return response.Result;
         }
     }

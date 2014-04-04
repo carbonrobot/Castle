@@ -190,7 +190,7 @@
     <Content Include="Content\css\bootstrap\bootstrap-theme.css.map" />
     <Content Include="Content\css\bootstrap\bootstrap.css.map" />
     <Content Include="Scripts\app\app.js" />
-    <Content Include="Scripts\app\controllers\homeController.js" />
+    <Content Include="Scripts\app\controllers\repositoryController.js" />
     <Content Include="Scripts\app\services\sourceService.js" />
     <Content Include="Scripts\vendor\angular-animate.js" />
     <Content Include="Scripts\vendor\angular-animate.min.js" />

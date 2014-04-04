@@ -1,14 +1,17 @@
 ﻿// ***************
-// home page controller
+// Repository controller
 // ***************
-castle.app.controllers.controller('HomeController', ['$scope', '$http', 'sourceService', function ($scope, $http, sourceService) {
+castle.app.controllers.controller('RepositoryController', ['$scope', '$http', 'sourceService', function ($scope, $http, sourceService) {
 
     $scope.loadingHistory = true;
     $scope.history = [];
+    $scope.repositoryKey = '';
 
-    $scope.init = function () {
+    $scope.init = function (repositoryKey) {
 
-        sourceService.getRecentHistory(function (data) {
+        $scope.repositoryKey = repositoryKey;
+
+        sourceService.getRecentHistory(repositoryKey, function (data) {
             delayPush(data, $scope.history);
             $scope.loadingHistory = false;
         });
@@ -24,6 +27,4 @@ castle.app.controllers.controller('HomeController', ['$scope', '$http', 'sourceS
             }, key * 25);
         });
     };
-
-    $scope.init();
 }]);

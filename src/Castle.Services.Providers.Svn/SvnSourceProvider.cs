@@ -18,7 +18,7 @@ namespace Castle.Services.Providers
             this.options = options;
         }
 
-        public IEnumerable<SourceLogEntry> GetRecentHistory(int days)
+        public IEnumerable<SourceLogEntry> GetHistory(string path, int days)
         {
             var list = new List<SourceLogEntry>();
 
@@ -27,66 +27,29 @@ namespace Castle.Services.Providers
                 var start = DateTime.Now.AddDays(days * -1);
                 var end = DateTime.Now.AddDays(1);
                 var range = new SvnRevisionRange(new SvnRevision(start), new SvnRevision(end));
-                var baseUri = "https://subversionprod/svn/";
 
-                // TODO: try to get the repos dynamo
-                // TODO: recent history should be all repos combined from date range
-                var repos = new string[] {
-                    "AHPTest",
-                    "ART",
-                    "Archive",
-                    "BusinessIntelligence",
-                    "Config",
-                    "Reporting",
-                    "TESTING_DOCS",
-                    "admin",
-                    "architecture",
-                    "c",
-                    "claims",
-                    "data",
-                    "document_management",
-                    "externally_hostedx",
-                    "finance",
-                    "interactive",
-                    "java",
-                    "migration",
-                    "sandbox",
-                    "scripts",
-                    "src",
-                    "travel"
-                };
+                Collection<SvnLogEventArgs> logitems;
+                client.GetLog(new Uri(path), new SvnLogArgs(range), out logitems);
 
-                for (int i = 0; i < repos.Length; i++)
+                foreach (var logEvent in logitems)
                 {
-                    try
-                    {
-                        Collection<SvnLogEventArgs> logitems;
-                        client.GetLog(new Uri(baseUri + repos[i]), new SvnLogArgs(range), out logitems);
 
-                        foreach (var logEvent in logitems)
-                        {
-                            
 
-                            list.Add(new SourceLogEntry()
-                            {
-                                Author = logEvent.Author,
-                                LogMessage = logEvent.LogMessage,
-                                Revision = logEvent.Revision,
-                                Time = logEvent.Time,
-                                ChangedPathCount = logEvent.ChangedPaths.Count,
-                                Branch = TryGetBranchName(logEvent)
-                            });
-                        }
-                    }
-                    catch (Exception)
+                    list.Add(new SourceLogEntry()
                     {
-                        // TODO: log warning and ignore
-                    }
+                        Author = logEvent.Author,
+                        LogMessage = logEvent.LogMessage,
+                        Revision = logEvent.Revision,
+                        Time = logEvent.Time,
+                        ChangedPathCount = logEvent.ChangedPaths.Count,
+                        Branch = TryGetBranchName(logEvent)
+                    });
                 }
-            };
+            }
 
             return list;
         }
+
 
         private string TryGetBranchName(SvnLogEventArgs logEvent)
         {

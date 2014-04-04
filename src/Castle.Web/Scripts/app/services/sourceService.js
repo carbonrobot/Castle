@@ -4,12 +4,13 @@
 castle.app.services.factory('sourceService', ['$http', function ($http) {
 
     var urls = {
-        recentHistory: "/api/v1/source/history/recent"
+        recentHistory: "/api/v1/source/{repositoryKey}/history/recent"
     };
 
     return {
-        getRecentHistory: function (callback) {
-            $http.get(urls.recentHistory).success(callback);
+        getRecentHistory: function (repositoryKey, callback) {
+            var url = urls.recentHistory.replace('{repositoryKey}', repositoryKey);
+            $http.get(url).success(callback);
         }
     };
 }]);

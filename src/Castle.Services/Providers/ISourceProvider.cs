@@ -9,6 +9,6 @@ namespace Castle.Services.Providers
 {
     public interface ISourceProvider
     {
-        IEnumerable<SourceLogEntry> GetRecentHistory(int days);
+        IEnumerable<SourceLogEntry> GetHistory(string path, int days);
     }
 }
