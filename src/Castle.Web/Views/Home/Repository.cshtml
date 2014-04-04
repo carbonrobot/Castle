@@ -1,10 +1,12 @@
 ﻿@model Castle.Web.Models.Home.RepositoryViewModel
 @{
     ViewBag.Title = @Model.Repository.Name;
+    ViewBag.Group = "source";
 }
 
-<div class="page-header repository-header">
+<div class="page-header">
     <h1 class="page-title">@Model.Repository.Name</h1>
+    <p>@Model.Repository.Path</p>
 </div>
 
 <div class="row" data-ng-controller="RepositoryController">

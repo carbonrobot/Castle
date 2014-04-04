@@ -35,6 +35,7 @@ namespace Castle.Web
             // register svn settings, tmp
             container.RegisterInstance<Castle.Services.Providers.SvnSourceProviderOptions>(new Services.Providers.SvnSourceProviderOptions()
             {
+                Server = "https://subversionprod/svn/",
                 UserName = "castle",
                 Password = "xcYCtqXn9Blo"
             });

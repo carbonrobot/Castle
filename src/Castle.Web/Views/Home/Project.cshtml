@@ -1,6 +1,7 @@
 ﻿@model Castle.Web.Models.Home.ProjectViewModel
 @{
     ViewBag.Title = @Model.Project.Name;
+    ViewBag.Group = "source";
 }
 
 <div class="page-header">
@@ -9,12 +10,83 @@
 
 <div class="row" data-ng-controller="ProjectController">
 
-    <div class="col-md-4 col-md-push-8">
-        
-    </div>
+    <div class="col-md-12" ng-init="init('@Model.Project.Key');">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#source" data-toggle="tab"><span class="glyphicon glyphicon-qrcode"></span> Source</a></li>
+            <li><a href="#docs" data-toggle="tab"><span class="glyphicon glyphicon-book"></span> Docs</a></li>
+            <li><a href="#commits" data-toggle="tab"><span class="glyphicon glyphicon-flash"></span> Commits</a></li>
+            <li><a href="#branches" data-toggle="tab"><span class="glyphicon glyphicon-tags"></span> Branches</a></li>
+            <li><a href="#contributors" data-toggle="tab"><span class="glyphicon glyphicon-globe"></span> Contributors</a></li>
+            <li><a href="#settings" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+        </ul>
 
-    <div class="col-md-8 col-md-pull-4" ng-init="init('@Model.Project.Key');">
-        @Html.Partial("~/views/source/_history.cshtml")
+        <div class="tab-content">
+            <div class="tab-pane active" id="source">
+
+                <div class="source-header">
+
+                    <ol class="breadcrumb">
+                        <li><a href="/@Model.Project.Repository.Key/@Model.Project.Key">@Model.Project.Name</a></li>
+                    </ol>
+
+                </div>
+
+                <div class="panel panel-info">
+                    <div class="panel-heading">rybaseman 30 minutes ago</div>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td><span class="glyphicon glyphicon-folder-close"></span> <a href="#">docs</a></td>
+                                <td>Added connection string info</td>
+                                <td>2 days ago</td>
+                            </tr>
+                            <tr>
+                                <td><span class="glyphicon glyphicon-folder-close"></span> <a href="#">src</a></td>
+                                <td>Updated the encryption helper</td>
+                                <td>30 minutes ago</td>
+                            </tr>
+                            <tr>
+                                <td><span class="glyphicon glyphicon-file"></span> <a href="#">README.md</a></td>
+                                <td>Added readme file</td>
+                                <td>10 days ago</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-file"></span> README.md</h3>
+                    </div>
+                    <div class="panel-body">
+                        <h2>Documentation</h2>
+                        <p>All you need to know about the application is here.</p>
+
+                        <h3>Installation and Usage</h3>
+                        <p>Start by including the following code in your html page</p>
+                        <p>
+                            <code>
+                                &lt;script src="/path/to/jquery.jsrazor.js"&gt;&lt;/script&gt;
+                            </code>
+                        </p>
+                        <p>Now you should be all set up and ready to start using this plugin</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="docs" class="tab-pane">
+            </div>
+            <div id="commits" class="tab-pane">
+                @Html.Partial("~/views/source/_history.cshtml")
+            </div>
+            <div id="branches" class="tab-pane">
+            </div>
+            <div id="contributors" class="tab-pane">
+            </div>
+            <div id="settings" class="tab-pane">
+            </div>
+        </div>
     </div>
 
 </div>

@@ -29,12 +29,10 @@ namespace Castle.Services.Providers
                 var range = new SvnRevisionRange(new SvnRevision(start), new SvnRevision(end));
 
                 Collection<SvnLogEventArgs> logitems;
-                client.GetLog(new Uri(path), new SvnLogArgs(range), out logitems);
+                client.GetLog(CreateUri(path), new SvnLogArgs(range), out logitems);
 
                 foreach (var logEvent in logitems)
                 {
-
-
                     list.Add(new SourceLogEntry()
                     {
                         Author = logEvent.Author,
@@ -50,6 +48,11 @@ namespace Castle.Services.Providers
             return list;
         }
 
+        private Uri CreateUri(string path)
+        {
+            var baseUri = new Uri(this.options.Server, UriKind.Absolute);
+            return new Uri(baseUri, path);
+        }
 
         private string TryGetBranchName(SvnLogEventArgs logEvent)
         {

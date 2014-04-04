@@ -3,7 +3,7 @@
 // ***************
 castle.app.controllers.controller('ProjectController', ['$scope', '$http', 'sourceService', function ($scope, $http, sourceService) {
 
-    $scope.loadingHistory = true;
+    $scope.loadingHistory = false;
     $scope.history = [];
     $scope.projectKey = '';
 
@@ -12,6 +12,7 @@ castle.app.controllers.controller('ProjectController', ['$scope', '$http', 'sour
     };
 
     $scope.getRecentHistory = function () {
+        $scope.loadingHistory = true;
         sourceService.getRecentProjectHistory($scope.projectKey, function (data) {
             delayPush(data, $scope.history);
             $scope.loadingHistory = false;

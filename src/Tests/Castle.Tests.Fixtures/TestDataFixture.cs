@@ -16,27 +16,29 @@ namespace Castle.Tests.Fixtures
 
         private void ProjectsFakeyFakey(DataContext context)
         {
-            var interactive = new Repository() { Name = "Interactive", Path = "https://subversionprod/svn/interactive" };
+            var interactive = new Repository() { Name = "Interactive", Path = "interactive" };
             interactive.Projects.Add(new Project()
             {
-                Name = "Quickservice"
+                Name = "Quickservice",
+                Path = "interactive/quickservice"
             });
             interactive.Projects.Add(new Project()
             {
-                Name = "Mobile Landing Pages"
+                Name = "Mobile Landing Pages",
+                Path = "interactive/mobile landing pages"
             });
 
-            var poladmin = new Repository() { Name = "Travel", Path = "https://subversionprod/svn/travel" };
+            var poladmin = new Repository() { Name = "Travel", Path = "travel" };
             poladmin.Projects.Add(new Project()
             {
-                Name = "Phoenix"
+                Name = "Trip Defender"
             });
             poladmin.Projects.Add(new Project()
             {
                 Name = "Billing Web Api"
             });
 
-            var docmgt = new Repository() { Name = "Document Management", Path = "https://subversionprod/svn/document_management" };
+            var docmgt = new Repository() { Name = "Document Management", Path = "document_management" };
             docmgt.Projects.Add(new Project()
             {
                 Name = "Ucm Content System"
@@ -46,7 +48,7 @@ namespace Castle.Tests.Fixtures
                 Name = "Document Web Api"
             });
 
-            var bi = new Repository() { Name = "Architecture", Path = "https://subversionprod/svn/architecture" };
+            var bi = new Repository() { Name = "Architecture", Path = "architecture" };
             bi.Projects.Add(new Project()
             {
                 Name = "Reporting Tools"
