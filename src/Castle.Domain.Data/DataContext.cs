@@ -19,7 +19,7 @@ namespace Castle.Domain.Data
         }
 
         public DbSet<Project> Projects { get; set; }
-        public DbSet<Team> ProjectGroups { get; set; }
+        public DbSet<Repository> ProjectGroups { get; set; }
 
         #region Helpers
 

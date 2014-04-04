@@ -1,57 +1,71 @@
 ﻿using System;
-using Castle.Services.Logging;
+using System.Linq;
+using System.Collections.Generic;
+using Castle.Domain;
+using Castle.Services.Providers;
 
 namespace Castle.Services
 {
-    public abstract class DomainService
+    public class DomainService : DataService
     {
-        /// <summary>
-        /// Executes a given function while isolating exception handling
-        /// </summary>
-        /// <typeparam name="T">The type of the result</typeparam>
-        /// <param name="func">The method to execute</param>
-        protected ServiceResponse<T> Execute<T>(Func<T> func)
+        public DomainService(IDataContext dataContext, ISourceProvider sourceProvider)
+            : base(dataContext)
         {
-            var response = new ServiceResponse<T>();
-            try
-            {
-                response.Result = func.Invoke();
-                response.HasError = false;
-                response.Exception = null;
-            }
-            catch (Exception ex)
-            {
-                this.Log().Error(() => ex.ToString());
-
-                response.Result = default(T);
-                response.HasError = true;
-                response.Exception = ex;
-            }
-            return response;
+            this.SourceProvider = sourceProvider;
         }
 
         /// <summary>
-        /// Executes a given action while isolating exception handling
+        /// Gets a list of all projects for a given repository
         /// </summary>
-        /// <typeparam name="T">The type of the result</typeparam>
-        /// <param name="action">The method to execute</param>
-        protected ServiceResponse Execute(Action action)
+        /// <param name="repositoryId">The repository id</param>
+        /// <returns>A list of all projects sorted by name</returns>
+        public ServiceResponse<IEnumerable<Project>> GetProjects(int repositoryId)
         {
-            var response = new ServiceResponse();
-            try
+            Func<IEnumerable<Project>> func = () =>
             {
-                action.Invoke();
-                response.HasError = false;
-                response.Exception = null;
-            }
-            catch (Exception ex)
-            {
-                this.Log().Error(() => ex.ToString());
+                var query = (from p in this.DataContext.AsQueryable<Project>(p => p.Repository)
+                             where p.RepositoryId == repositoryId
+                             orderby p.Name
+                             select p);
 
-                response.HasError = true;
-                response.Exception = ex;
-            }
-            return response;
+                return query.ToList();
+            };
+            return this.Execute(func);
         }
+
+        /// <summary>
+        /// Gets a list of all repositories
+        /// </summary>
+        /// <returns>A list of all repositories sorted by name</returns>
+        public ServiceResponse<IEnumerable<Repository>> GetRepositories()
+        {
+            Func<IEnumerable<Repository>> func = () =>
+            {
+                var query = (from p in this.DataContext.AsQueryable<Repository>()
+                             select p);
+
+                return query.ToList();
+            };
+            return this.Execute(func);
+        }
+
+        /// <summary>
+        /// Gets a repository by its key
+        /// </summary>
+        /// <returns>The repository and its associated projects</returns>
+        public ServiceResponse<Repository> GetRepository(string key)
+        {
+            Func<Repository> func = () =>
+            {
+                var query = (from p in this.DataContext.AsQueryable<Repository>(x => x.Projects)
+                             where p.Key.Equals(key, StringComparison.InvariantCultureIgnoreCase)
+                             select p);
+
+                return query.Single();
+            };
+            return this.Execute(func);
+        }
+
+        private readonly ISourceProvider SourceProvider;
     }
 }

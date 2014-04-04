@@ -8,7 +8,7 @@ using Castle.Services.Providers;
 
 namespace Castle.Services
 {
-    public class SourceService : DomainService
+    public class SourceService : ServiceBase
     {
         private readonly ISourceProvider SourceProvider;
 

@@ -6,8 +6,8 @@ using Castle.Domain;
 
 namespace Castle.Web.Models.Home
 {
-    public class IndexViewModel
+    public class RepositoryViewModel
     {
-        public IEnumerable<Repository> RepositoryList { get; set; }
+        public Repository Repository { get; set; }
     }
 }

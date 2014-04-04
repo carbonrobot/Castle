@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="Entity.cs" />
     <Compile Include="Project.cs" />
-    <Compile Include="Team.cs" />
+    <Compile Include="Repository.cs" />
     <Compile Include="SourceLogEntry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

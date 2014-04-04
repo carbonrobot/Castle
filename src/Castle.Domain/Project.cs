@@ -18,29 +18,15 @@
         public string Path { get; set; }
 
         /// <summary>
-        /// Gets or sets the team that owns this project.
+        /// Gets or sets the Repository that owns this project.
         /// </summary>
-        /// <value>The team.</value>
-        public Team Team { get; set; }
+        /// <value>The Repository.</value>
+        public Repository Repository { get; set; }
 
         /// <summary>
-        /// Gets or sets the team id.
+        /// Gets or sets the Repository id.
         /// </summary>
-        public int TeamId { get; set; }
+        public int RepositoryId { get; set; }
 
-        /// <summary>
-        /// Gets the full group name plus project name
-        /// </summary>
-        public string FullName
-        {
-            get
-            {
-                if (this.Team != null)
-                {
-                    return string.Format("{0} / {1}", this.Team.Nickname, this.Name);
-                }
-                return this.Name;
-            }
-        }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Castle.Services
 {
-    public abstract class DataService : DomainService
+    public abstract class DataService : ServiceBase
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DataService"/> class.
