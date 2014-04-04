@@ -166,6 +166,7 @@
     </Compile>
     <Compile Include="Logging\NLogLog.cs" />
     <Compile Include="Models\Home\IndexViewModel.cs" />
+    <Compile Include="Models\Home\ProjectViewModel.cs" />
     <Compile Include="Models\Home\RepositoryViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\Api\SourceController.cs" />
@@ -190,6 +191,7 @@
     <Content Include="Content\css\bootstrap\bootstrap-theme.css.map" />
     <Content Include="Content\css\bootstrap\bootstrap.css.map" />
     <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\controllers\projectController.js" />
     <Content Include="Scripts\app\controllers\repositoryController.js" />
     <Content Include="Scripts\app\services\sourceService.js" />
     <Content Include="Scripts\vendor\angular-animate.js" />
@@ -231,6 +233,7 @@
     <Content Include="Views\Shared\_Loader.cshtml" />
     <Content Include="Views\Source\_History.cshtml" />
     <Content Include="Views\Home\Repository.cshtml" />
+    <Content Include="Views\Home\Project.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Castle.Domain.Data\Castle.Domain.Data.csproj">

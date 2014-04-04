@@ -1,22 +1,22 @@
 ﻿// ***************
-// Repository controller
+// Project controller
 // ***************
-castle.app.controllers.controller('RepositoryController', ['$scope', '$http', 'sourceService', function ($scope, $http, sourceService) {
+castle.app.controllers.controller('ProjectController', ['$scope', '$http', 'sourceService', function ($scope, $http, sourceService) {
 
     $scope.loadingHistory = true;
     $scope.history = [];
-    $scope.repositoryKey = '';
+    $scope.projectKey = '';
 
     $scope.init = function (key) {
+        $scope.projectKey = key;
+    };
 
-        $scope.repositoryKey = key;
-
-        sourceService.getRecentRepositoryHistory(key, function (data) {
+    $scope.getRecentHistory = function () {
+        sourceService.getRecentProjectHistory($scope.projectKey, function (data) {
             delayPush(data, $scope.history);
             $scope.loadingHistory = false;
         });
-
-    };
+    }
 
     // make it look pretty when it loads
     var delayPush = function (source, dest) {

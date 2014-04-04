@@ -1,0 +1,20 @@
+﻿@model Castle.Web.Models.Home.ProjectViewModel
+@{
+    ViewBag.Title = @Model.Project.Name;
+}
+
+<div class="page-header">
+    <h1 class="page-title"><a href="/@Model.Project.Repository.Key">@Model.Project.Repository.Name</a> / <strong><a href="/@Model.Project.Repository.Key/@Model.Project.Key">@Model.Project.Name</a></strong></h1>
+</div>
+
+<div class="row" data-ng-controller="ProjectController">
+
+    <div class="col-md-4 col-md-push-8">
+        
+    </div>
+
+    <div class="col-md-8 col-md-pull-4" ng-init="init('@Model.Project.Key');">
+        @Html.Partial("~/views/source/_history.cshtml")
+    </div>
+
+</div>

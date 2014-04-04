@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using Castle.Domain;
 using Castle.Services.Providers;
 
@@ -12,6 +12,40 @@ namespace Castle.Services
             : base(dataContext)
         {
             this.SourceProvider = sourceProvider;
+        }
+
+        /// <summary>
+        /// Gets a project by its key
+        /// </summary>
+        /// <returns>The project</returns>
+        public ServiceResponse<Project> GetProject(string key)
+        {
+            Func<Project> func = () =>
+            {
+                var query = (from p in this.DataContext.AsQueryable<Project>(x => x.Repository)
+                             where p.Key.Equals(key, StringComparison.InvariantCultureIgnoreCase)
+                             select p);
+
+                return query.Single();
+            };
+            return this.Execute(func);
+        }
+
+        /// <summary>
+        /// Gets the recent change history for project.
+        /// </summary>
+        /// <param name="key">The Project key.</param>
+        /// <param name="days">The number of days to include.</param>
+        /// <returns>ServiceResponse&lt;IEnumerable&lt;SourceLogEntry&gt;&gt;.</returns>
+        public ServiceResponse<IEnumerable<SourceLogEntry>> GetProjectHistory(string key, int days)
+        {
+            Func<IEnumerable<SourceLogEntry>> func = () =>
+            {
+                var project = this.DataContext.AsQueryable<Project>().Single(x => x.Key.Equals(key, StringComparison.InvariantCultureIgnoreCase));
+                var history = this.SourceProvider.GetHistory(project.Path, days);
+                return history.OrderByDescending(x => x.Time);
+            };
+            return this.Execute(func);
         }
 
         /// <summary>
@@ -67,7 +101,7 @@ namespace Castle.Services
         }
 
         /// <summary>
-        /// Gets the recent change history for all configured repositories.
+        /// Gets the recent change history for this repository.
         /// </summary>
         /// <param name="key">The repository key.</param>
         /// <param name="days">The number of days to include.</param>

@@ -19,16 +19,30 @@ namespace Castle.Web.Controllers.Api
         }
 
         [HttpGet]
-        [Route("{repositoryKey}/history/recent")]
-        public IEnumerable<Domain.SourceLogEntry> RecentHistory(string repositoryKey)
+        [Route("repository/{key}/history/recent")]
+        public IEnumerable<Domain.SourceLogEntry> RecentRepositoryHistory(string key)
         {
-            var response = this.DomainService.GetRepositoryHistory(repositoryKey, 7);
+            var response = this.DomainService.GetRepositoryHistory(key, 7);
             if (response.HasError)
                 throw new HttpResponseException(HttpStatusCode.InternalServerError);
 
             if (response.Result == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             
+            return response.Result;
+        }
+
+        [HttpGet]
+        [Route("project/{key}/history/recent")]
+        public IEnumerable<Domain.SourceLogEntry> RecentProjectHistory(string key)
+        {
+            var response = this.DomainService.GetProjectHistory(key, 7);
+            if (response.HasError)
+                throw new HttpResponseException(HttpStatusCode.InternalServerError);
+
+            if (response.Result == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+
             return response.Result;
         }
     }

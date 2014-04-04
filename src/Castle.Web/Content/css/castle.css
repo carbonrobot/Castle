@@ -26,3 +26,8 @@ body {
 .ng-cloak {
     display: none;
 }
+
+.page-title {
+    font-size: 20px;
+    line-height: 28px;
+}

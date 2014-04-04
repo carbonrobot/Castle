@@ -47,5 +47,20 @@ namespace Castle.Web.Controllers
             };
             return View("Repository", model);
         }
+
+        [HttpGet]
+        [Route("{repositoryKey}/{projectKey}")]
+        public ActionResult Index(string repositoryKey, string projectKey)
+        {
+            var response = this.ProjectService.GetProject(projectKey);
+
+            // TODO: handle errors
+
+            var model = new ProjectViewModel()
+            {
+                Project = response.Result
+            };
+            return View("Project", model);
+        }
     }
 }
