@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Castle.Domain;
 using SharpSvn;
 
@@ -12,7 +9,10 @@ namespace Castle.Services.Providers
 {
     public class SvnSourceProvider : ISourceProvider
     {
-        public SvnSourceProvider() { }
+        public SvnSourceProvider()
+        {
+        }
+
         public SvnSourceProvider(SvnSourceProviderOptions options)
         {
             this.options = options;
