@@ -3,12 +3,15 @@
 // ***************
 castle.app.controllers.controller('ProjectController', ['$scope', '$http', 'sourceService', function ($scope, $http, sourceService) {
 
+    $scope.loadingFiles = false;
     $scope.loadingHistory = false;
+    $scope.loadingReadme = false;
     $scope.history = [];
     $scope.files = [];
     $scope.projectKey = '';
     $scope.branch = '';
     $scope.path = '';
+    $scope.openFile = '';
 
     $scope.init = function (key, path) {
         $scope.projectKey = key;
@@ -23,6 +26,18 @@ castle.app.controllers.controller('ProjectController', ['$scope', '$http', 'sour
         sourceService.getFiles($scope.path, $scope.branch, function (data) {
             delayPush(data, $scope.files);
             $scope.loadingFiles = false;
+        });
+    }
+
+    // load a readme file if available
+    $scope.getFiles = function () {
+        $scope.loadingReadme = true;
+        sourceService.getFile($scope.path, $scope.branch, function (data) {
+            
+            var marked = require('marked');
+            $scope.openFile = marked(data);
+
+            $scope.loadingReadme = false;
         });
     }
 
