@@ -41,8 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity.cs" />
+    <Compile Include="Extensions\TimespanExtensions.cs" />
+    <Compile Include="FileEntryKind.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Repository.cs" />
+    <Compile Include="SourceFileInfo.cs" />
     <Compile Include="SourceLogEntry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UriSafeEntity.cs" />

@@ -18,6 +18,36 @@ namespace Castle.Services.Providers
             this.options = options;
         }
 
+        public SvnSourceProviderOptions options { get; set; }
+
+        public IEnumerable<SourceFileInfo> GetFiles(string path, string branch = "")
+        {
+            var files = new List<SourceFileInfo>();
+            using (var client = CreateSvnClient())
+            {
+                Collection<SvnListEventArgs> contents;
+                if (client.GetList(CreateUri(path), out contents))
+                {
+                    foreach (var item in contents)
+                    {
+                        if (item.Path != "")
+                        {
+                            files.Add(new SourceFileInfo()
+                            {
+                                Name = item.Name,
+                                Path = item.Uri.ToString(),
+                                Kind = FileEntryKindFromNodeKind(item.Entry.NodeKind),
+                                ChangeTime = item.Entry.Time,
+                                Author = item.Entry.Author,
+                                Change = ""
+                            });
+                        }
+                    }
+                }
+            }
+            return files.OrderBy(x => x.Kind).ThenBy(x => x.Name);
+        }
+
         public IEnumerable<SourceLogEntry> GetHistory(string path, int days)
         {
             var list = new List<SourceLogEntry>();
@@ -48,6 +78,23 @@ namespace Castle.Services.Providers
             return list;
         }
 
+        private SvnClient CreateSvnClient()
+        {
+            var client = new SharpSvn.SvnClient();
+            client.Authentication.DefaultCredentials = new System.Net.NetworkCredential(options.UserName, options.Password);
+            return client;
+        }
+
+        private FileEntryKind FileEntryKindFromNodeKind(SvnNodeKind nodeKind)
+        {
+            switch (nodeKind)
+            {
+                case SvnNodeKind.Directory: return FileEntryKind.Directory;
+                case SvnNodeKind.File: return FileEntryKind.File;
+                default: return FileEntryKind.Unknown;
+            }
+        }
+
         private Uri CreateUri(string path)
         {
             var baseUri = new Uri(this.options.Server, UriKind.Absolute);
@@ -68,14 +115,5 @@ namespace Castle.Services.Providers
             }
             return branch;
         }
-
-        private SvnClient CreateSvnClient()
-        {
-            var client = new SharpSvn.SvnClient();
-            client.Authentication.DefaultCredentials = new System.Net.NetworkCredential(options.UserName, options.Password);
-            return client;
-        }
-
-        public SvnSourceProviderOptions options { get; set; }
     }
 }

@@ -5,12 +5,28 @@ castle.app.controllers.controller('ProjectController', ['$scope', '$http', 'sour
 
     $scope.loadingHistory = false;
     $scope.history = [];
+    $scope.files = [];
     $scope.projectKey = '';
+    $scope.branch = '';
+    $scope.path = '';
 
-    $scope.init = function (key) {
+    $scope.init = function (key, path) {
         $scope.projectKey = key;
+        $scope.path = path;
+
+        $scope.getFiles();
     };
 
+    // load files at this path
+    $scope.getFiles = function () {
+        $scope.loadingFiles = true;
+        sourceService.getFiles($scope.path, $scope.branch, function (data) {
+            delayPush(data, $scope.files);
+            $scope.loadingFiles = false;
+        });
+    }
+
+    // get the commit history
     $scope.getRecentHistory = function () {
         $scope.loadingHistory = true;
         sourceService.getRecentProjectHistory($scope.projectKey, function (data) {

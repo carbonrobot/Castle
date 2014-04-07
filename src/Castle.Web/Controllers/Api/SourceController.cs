@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Castle.Domain;
 using Castle.Services;
 
 namespace Castle.Web.Controllers.Api
@@ -12,10 +13,12 @@ namespace Castle.Web.Controllers.Api
     public class SourceController : ApiController
     {
         private readonly DomainService DomainService;
+        private readonly SourceService SourceService;
 
-        public SourceController(DomainService service)
+        public SourceController(DomainService domainService, SourceService sourceService)
         {
-            this.DomainService = service;
+            this.DomainService = domainService;
+            this.SourceService = sourceService;
         }
 
         [HttpGet]
@@ -23,11 +26,7 @@ namespace Castle.Web.Controllers.Api
         public IEnumerable<Domain.SourceLogEntry> RecentRepositoryHistory(string key)
         {
             var response = this.DomainService.GetRepositoryHistory(key, 7);
-            if (response.HasError)
-                throw new HttpResponseException(HttpStatusCode.InternalServerError);
-
-            if (response.Result == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+            EnsureReponse(response);
             
             return response.Result;
         }
@@ -37,13 +36,32 @@ namespace Castle.Web.Controllers.Api
         public IEnumerable<Domain.SourceLogEntry> RecentProjectHistory(string key)
         {
             var response = this.DomainService.GetProjectHistory(key, 7);
+            EnsureReponse(response);
+
+            return response.Result;
+        }
+
+        [HttpGet]
+        [Route("")]
+        public IEnumerable<SourceFileInfo> Index(string path)
+        {
+            var response = this.SourceService.GetFileInfo(path);
+            EnsureReponse(response);
+
+            return response.Result;
+        }
+
+        /// <summary>
+        /// Ensures the reponse does not contain an error or null result
+        /// </summary>
+        /// <param name="response">The response.</param>
+        protected void EnsureReponse<T>(ServiceResponse<T> response)
+        {
             if (response.HasError)
                 throw new HttpResponseException(HttpStatusCode.InternalServerError);
 
             if (response.Result == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
-
-            return response.Result;
         }
     }
 }

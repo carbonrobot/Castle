@@ -50,6 +50,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ISourceProvider.cs" />
     <Compile Include="ServiceResponse.cs" />
+    <Compile Include="SourceService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Castle.Domain\Castle.Domain.csproj">

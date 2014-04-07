@@ -20,7 +20,7 @@ namespace Castle.Tests.Fixtures
             interactive.Projects.Add(new Project()
             {
                 Name = "Quickservice",
-                Path = "interactive/quickservice"
+                Path = "interactive/trunk/Quickservice"
             });
             interactive.Projects.Add(new Project()
             {

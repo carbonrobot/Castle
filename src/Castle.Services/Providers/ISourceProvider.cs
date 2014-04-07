@@ -10,5 +10,6 @@ namespace Castle.Services.Providers
     public interface ISourceProvider
     {
         IEnumerable<SourceLogEntry> GetHistory(string path, int days);
+        IEnumerable<SourceFileInfo> GetFiles(string path, string branch = "");
     }
 }
