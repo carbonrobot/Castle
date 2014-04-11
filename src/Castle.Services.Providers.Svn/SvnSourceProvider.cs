@@ -110,7 +110,10 @@ namespace Castle.Services.Providers
                 {
                     // grab the branch name from the first name after "branches"
                     var folders = logEvent.ChangedPaths[0].Path.Split('/').ToList();
-                    branch = folders[folders.IndexOf("branches") + 1];
+                    if (folders.IndexOf("branches") + 1 < folders.Count)
+                    {
+                        branch = folders[folders.IndexOf("branches") + 1];
+                    }
                 }
             }
             return branch;
