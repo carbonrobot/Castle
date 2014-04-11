@@ -20,48 +20,23 @@ namespace Castle.Tests.Fixtures
             interactive.Projects.Add(new Project()
             {
                 Name = "Quickservice",
-                Path = "interactive/trunk/Quickservice"
+                Path = "interactive/trunk/Quickservice/trunk"
             });
             interactive.Projects.Add(new Project()
             {
                 Name = "Mobile Landing Pages",
-                Path = "interactive/mobile landing pages"
-            });
-
-            var poladmin = new Repository() { Name = "Travel", Path = "travel" };
-            poladmin.Projects.Add(new Project()
-            {
-                Name = "Trip Defender"
-            });
-            poladmin.Projects.Add(new Project()
-            {
-                Name = "Billing Web Api"
+                Path = "interactive/trunk/Mobile Landing Pages"
             });
 
             var docmgt = new Repository() { Name = "Document Management", Path = "document_management" };
             docmgt.Projects.Add(new Project()
             {
-                Name = "Ucm Content System"
-            });
-            docmgt.Projects.Add(new Project()
-            {
-                Name = "Document Web Api"
-            });
-
-            var bi = new Repository() { Name = "Architecture", Path = "architecture" };
-            bi.Projects.Add(new Project()
-            {
-                Name = "Reporting Tools"
-            });
-            bi.Projects.Add(new Project()
-            {
-                Name = "Financial Database"
+                Name = "Document Web Api",
+                Path = "document_management/trunk/web/Web.API"
             });
 
             context.ProjectGroups.Add(interactive);
-            context.ProjectGroups.Add(poladmin);
             context.ProjectGroups.Add(docmgt);
-            context.ProjectGroups.Add(bi);
         }
     }
 }

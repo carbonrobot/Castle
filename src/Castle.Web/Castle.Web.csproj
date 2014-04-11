@@ -203,6 +203,8 @@
     <Content Include="Scripts\vendor\angular-resource.min.js" />
     <Content Include="Scripts\vendor\angular-route.js" />
     <Content Include="Scripts\vendor\angular-route.min.js" />
+    <Content Include="Scripts\vendor\angular-sanitize.js" />
+    <Content Include="Scripts\vendor\angular-sanitize.min.js" />
     <Content Include="Scripts\vendor\angular.js" />
     <Content Include="Scripts\vendor\angular.min.js" />
     <Content Include="Scripts\vendor\bootstrap.js" />
@@ -215,6 +217,7 @@
     <Content Include="Scripts\vendor\angular.min.js.map" />
     <Content Include="Scripts\vendor\angular-route.min.js.map" />
     <Content Include="Scripts\vendor\angular-animate.min.js.map" />
+    <Content Include="Scripts\vendor\angular-sanitize.min.js.map" />
     <None Include="Scripts\vendor\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\vendor\jquery-2.1.0.js" />
     <Content Include="Scripts\vendor\jquery-2.1.0.min.js" />

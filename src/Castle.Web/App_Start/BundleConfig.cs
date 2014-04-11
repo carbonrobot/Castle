@@ -17,10 +17,12 @@ namespace Castle.Web
                     "~/Scripts/vendor/bootstrap.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                    "~/Scripts/vendor/require.js",
                     "~/Scripts/vendor/angular.js",
                     "~/Scripts/vendor/angular-route.js",
                     "~/Scripts/vendor/angular-resource.js",
                     "~/Scripts/vendor/angular-animate.js",
+                    "~/Scripts/vendor/angular-sanitize.js",
                     "~/Scripts/app/app.js",
                     "~/Scripts/app/services/*.js",
                     "~/Scripts/app/controllers/*.js"));
