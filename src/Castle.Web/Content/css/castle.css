@@ -31,3 +31,9 @@ body {
     font-size: 20px;
     line-height: 28px;
 }
+
+.panel-body h2 {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d3d3d3;
+}
