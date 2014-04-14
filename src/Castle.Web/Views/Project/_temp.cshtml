@@ -1,0 +1,61 @@
+﻿<div class="row" data-ng-controller="ProjectController">
+
+    <div class="col-md-12" data-ng-init="init('@Model.Project.Key', '@Model.Project.Path');">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#source" data-toggle="tab"><span class="glyphicon glyphicon-qrcode"></span> Source</a></li>
+            <li><a href="#docs" data-toggle="tab"><span class="glyphicon glyphicon-book"></span> Docs</a></li>
+            <li><a href="#commits" data-toggle="tab"><span class="glyphicon glyphicon-flash"></span> Commits</a></li>
+            <li><a href="#branches" data-toggle="tab"><span class="glyphicon glyphicon-tags"></span> Branches</a></li>
+            <li><a href="#contributors" data-toggle="tab"><span class="glyphicon glyphicon-globe"></span> Contributors</a></li>
+            <li><a href="#settings" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="source">
+
+                <div class="source-header">
+
+                    <ol class="breadcrumb">
+                        <li><a href="/@Model.Project.Repository.Key/@Model.Project.Key">@Model.Project.Name</a></li>
+                    </ol>
+
+                </div>
+
+                <div class="panel panel-info ng-cloak" data-ng-hide="loadingFiles">
+                    <div class="panel-heading">rybaseman 30 minutes ago</div>
+                    <table class="table">
+                        <tbody>
+                            <tr data-ng-repeat="entry in files">
+                                <td><span class="glyphicon {{entry.Kind==1 && 'glyphicon-folder-close' || 'glyphicon-file'}}"></span> <a href="#/source/{{ entry.Path }}">{{ entry.Name }}</a></td>
+                                <td class="text-muted">{{ entry.Change }}</td>
+                                <td class="text-muted text-right">{{ entry.ChangeRelativeTime }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-file"></span> README.md</h3>
+                    </div>
+                    <div class="panel-body" data-ng-bind-html="openFile">
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="docs" class="tab-pane">
+            </div>
+            <div id="commits" class="tab-pane">
+                @Html.Partial("~/views/source/_history.cshtml")
+            </div>
+            <div id="branches" class="tab-pane">
+            </div>
+            <div id="contributors" class="tab-pane">
+            </div>
+            <div id="settings" class="tab-pane">
+            </div>
+        </div>
+    </div>
+
+</div>

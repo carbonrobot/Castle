@@ -1,6 +1,9 @@
 ﻿.drop {
     margin-top: 10px;
 }
+.media.drop {
+    margin-bottom: 50px;
+}
 
 body {
     padding-top: 50px;

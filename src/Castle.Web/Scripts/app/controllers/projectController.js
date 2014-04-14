@@ -1,8 +1,9 @@
 ﻿// ***************
 // Project controller
 // ***************
-castle.app.controllers.controller('ProjectController', ['$scope', '$http', 'sourceService', function ($scope, $http, sourceService) {
+castle.app.controllers.controller('ProjectController', ['$scope', '$http', 'sourceService', 'projectService', function ($scope, $http, sourceService, projectService) {
 
+    $scope.loadingProject = true;
     $scope.loadingFiles = false;
     $scope.loadingHistory = false;
     $scope.loadingReadme = false;
@@ -20,6 +21,14 @@ castle.app.controllers.controller('ProjectController', ['$scope', '$http', 'sour
         $scope.getReadme();
     };
 
+    // get project information
+    $scope.getProject = function () {
+        $scope.loadingProject = true;
+        projectService.getProjectByKey(key, function (data) {
+
+        });
+    };
+
     // load files at this path
     $scope.getFiles = function () {
         $scope.loadingFiles = true;
@@ -27,19 +36,19 @@ castle.app.controllers.controller('ProjectController', ['$scope', '$http', 'sour
             delayPush(data, $scope.files);
             $scope.loadingFiles = false;
         });
-    }
+    };
 
     // load a readme file if available
     $scope.getReadme = function () {
         $scope.loadingReadme = true;
         sourceService.getFileContent($scope.path + '/README.md', function (data) {
-            
+
             require(['/scripts/vendor/marked.js'], function (marked) {
                 $scope.openFile = marked(data);
                 $scope.loadingReadme = false;
             });
         });
-    }
+    };
 
     // get the commit history
     $scope.getRecentHistory = function () {
@@ -48,7 +57,7 @@ castle.app.controllers.controller('ProjectController', ['$scope', '$http', 'sour
             delayPush(data, $scope.history);
             $scope.loadingHistory = false;
         });
-    }
+    };
 
     // make it look pretty when it loads
     var delayPush = function (source, dest) {

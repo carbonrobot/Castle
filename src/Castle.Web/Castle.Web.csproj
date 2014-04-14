@@ -196,6 +196,7 @@
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\controllers\projectController.js" />
     <Content Include="Scripts\app\controllers\repositoryController.js" />
+    <Content Include="Scripts\app\services\projectService.js" />
     <Content Include="Scripts\app\services\sourceService.js" />
     <Content Include="Scripts\vendor\angular-animate.js" />
     <Content Include="Scripts\vendor\angular-animate.min.js" />
@@ -242,6 +243,8 @@
     <Content Include="Views\Source\_History.cshtml" />
     <Content Include="Views\Repository\Index.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="Views\Project\_index.html" />
+    <Content Include="Views\Project\_temp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Castle.Domain.Data\Castle.Domain.Data.csproj">
