@@ -70,8 +70,12 @@ namespace Castle.Services.Providers
             var files = new List<SourceFileInfo>();
             using (var client = CreateSvnClient())
             {
+                var args = new SvnListArgs()
+                {
+                    RetrieveEntries = SvnDirEntryItems.Kind | SvnDirEntryItems.LastAuthor | SvnDirEntryItems.Revision | SvnDirEntryItems.Time
+                };
                 Collection<SvnListEventArgs> contents;
-                if (client.GetList(CreateUri(path), out contents))
+                if (client.GetList(CreateUri(path), args, out contents))
                 {
                     // TODO: support branching
                     files.AddRange(MapSourceFileInfo(contents));
@@ -226,8 +230,7 @@ namespace Castle.Services.Providers
                         Path = GetServerRelativePath(item.Uri),
                         Kind = FileEntryKindFromNodeKind(item.Entry.NodeKind),
                         ChangeTime = item.Entry.Time,
-                        Author = item.Entry.Author,
-                        Change = ""
+                        Author = item.Entry.Author.ToLowerInvariant()
                     };
                 }
             }

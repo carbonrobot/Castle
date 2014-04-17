@@ -19,8 +19,6 @@ namespace Castle.Domain
                 return this.ChangeTime.RelativeDate();
             }
         }
-        public string Change { get; set; }
-
         public string Author { get; set; }
     }
 }

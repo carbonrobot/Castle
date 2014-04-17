@@ -4,7 +4,6 @@
 castle.app.controllers.controller('FileController', ['$scope', '$http', '$route', 'sourceService', function ($scope, $http, $route, sourceService) {
 
     $scope.loadingFiles = false;
-    $scope.loadingReadme = false;
     $scope.isReadmeAvailable = false;
     $scope.files = [];
     $scope.path = '';
@@ -42,12 +41,10 @@ castle.app.controllers.controller('FileController', ['$scope', '$http', '$route'
 
     // load a readme file if available
     $scope.loadReadme = function () {
-        $scope.loadingReadme = true;
         sourceService.getFileContent($scope.path + '/README.md', function (data) {
 
             require(['/scripts/vendor/marked.js'], function (marked) {
                 $scope.openFile = marked(data);
-                $scope.loadingReadme = false;
 
                 // FIX: scope doesnt always update inside require[]
                 $scope.$apply(); 

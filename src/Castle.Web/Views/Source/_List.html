@@ -14,7 +14,7 @@
             <tbody>
                 <tr data-ng-repeat="entry in files">
                     <td><span class="glyphicon {{entry.Kind==1 && 'glyphicon-folder-close' || 'glyphicon-file'}}"></span> <a href="#/source/{{ entry.Path }}">{{ entry.Name }}</a></td>
-                    <td class="text-muted">{{ entry.Change }}</td>
+                    <td class="text-muted text-right">{{ entry.Author }}</td>
                     <td class="text-muted text-right">{{ entry.ChangeRelativeTime }}</td>
                 </tr>
             </tbody>
