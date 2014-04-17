@@ -248,6 +248,7 @@
     <Content Include="Views\Repository\Index.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
     <Content Include="Views\Source\_List.html" />
+    <Content Include="Views\Repository\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Castle.Domain.Data\Castle.Domain.Data.csproj">

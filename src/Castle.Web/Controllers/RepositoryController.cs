@@ -4,7 +4,6 @@ using Castle.Web.Models.Repository;
 
 namespace Castle.Web.Controllers
 {
-    [RoutePrefix("source")]
     public class RepositoryController : DomainController
     {
         public RepositoryController(DomainService service)
@@ -12,7 +11,7 @@ namespace Castle.Web.Controllers
         {
         }
 
-        [HttpGet, Route("{repositoryKey}")]
+        [HttpGet, Route("source/{repositoryKey}")]
         public ActionResult Index(string repositoryKey)
         {
             var response = this.ProjectService.GetRepository(repositoryKey);
@@ -27,9 +26,16 @@ namespace Castle.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult New()
+        public ActionResult Create()
         {
-            return View("Update");
+            var model = new RepositoryViewModel();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Create(RepositoryViewModel model)
+        {
+            return View(model);
         }
     }
 }
