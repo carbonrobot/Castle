@@ -9,11 +9,11 @@ castle.app.controllers.controller('RawController', ['$scope', '$http', '$route',
 
     $scope.init = function (path) {
         $scope.path = path;
-        $scope.openFile();
+        $scope.loadFile();
     };
 
     // load a readme file if available
-    $scope.openFile = function () {
+    $scope.loadFile = function () {
         $scope.loadingFile = true;
         sourceService.getFileContent($scope.path, function (data) {
 
