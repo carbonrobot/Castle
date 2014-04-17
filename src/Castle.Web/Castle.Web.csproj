@@ -226,6 +226,7 @@
     <Content Include="Scripts\vendor\jquery-2.1.0.min.js" />
     <Content Include="Scripts\vendor\marked.js" />
     <Content Include="Scripts\vendor\modernizr-2.7.2.js" />
+    <Content Include="Scripts\vendor\moment.js" />
     <Content Include="Scripts\vendor\require.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Source\_Raw.html" />

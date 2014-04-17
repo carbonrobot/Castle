@@ -9,6 +9,7 @@ castle.app.controllers.controller('FileController', ['$scope', '$http', '$route'
     $scope.path = '';
     $scope.openFile = '';
     $scope.paths = [];
+    $scope.lastChange = 'Gathering Files...';
 
     $scope.init = function (path) {
         // if no path was passed in, use the project path from the parent scope
@@ -23,11 +24,7 @@ castle.app.controllers.controller('FileController', ['$scope', '$http', '$route'
         $scope.getFiles();
 
         // break out the path into links
-        var parts = $scope.path.split('/');
-        for (i = 0; i < parts.length; i++) {
-            var linkPath = parts.slice(0, i + 1).join('/');
-            $scope.paths.push({ "name": parts[i], "path": linkPath });
-        }
+        $scope.paths = castle.app.utils.generatePaths($scope.path);
     };
 
     // load files at this path
@@ -45,6 +42,15 @@ castle.app.controllers.controller('FileController', ['$scope', '$http', '$route'
                     return;
                 }
             });
+
+            // display the latest change
+            var last = data[0];
+            angular.forEach(data, function (item, key) {
+                if (moment(last.ChangeTime).isBefore(item.ChangeTime)) {
+                    last = item;
+                }
+            });
+            $scope.lastChange = last.Author + " " + last.ChangeRelativeTime;
         });
     };
 

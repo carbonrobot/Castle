@@ -41,6 +41,17 @@ castle.app.utils = (function ($) {
                     $scope.$apply();
                 }, key * 25);
             });
+        },
+        
+        // generate path links for navigation
+        generatePaths : function (path) {
+            var parts = path.split('/');
+            var links = [];
+            for (i = 0; i < parts.length; i++) {
+                var linkPath = parts.slice(0, i + 1).join('/');
+                links.push({ "name": parts[i], "path": linkPath });
+            }
+            return links;
         }
 
     };

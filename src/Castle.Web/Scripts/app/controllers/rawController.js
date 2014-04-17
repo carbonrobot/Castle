@@ -6,10 +6,14 @@ castle.app.controllers.controller('RawController', ['$scope', '$http', '$route',
     $scope.loadingFile = false;
     $scope.path = '';
     $scope.openFile = '';
+    $scope.paths = [];
 
     $scope.init = function (path) {
         $scope.path = path;
         $scope.loadFile();
+
+        // break out the path into links
+        $scope.paths = castle.app.utils.generatePaths($scope.path);
     };
 
     // load a readme file if available

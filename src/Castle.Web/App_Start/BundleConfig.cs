@@ -23,6 +23,7 @@ namespace Castle.Web
                     "~/Scripts/vendor/angular-resource.js",
                     "~/Scripts/vendor/angular-animate.js",
                     "~/Scripts/vendor/angular-sanitize.js",
+                    "~/Scripts/vendor/moment.js",
                     "~/Scripts/app/app.js",
                     "~/Scripts/app/services/*.js",
                     "~/Scripts/app/controllers/*.js"));

@@ -1,11 +1,12 @@
 ﻿<div class="tab-pane active" id="source">
 
     <div class="source-header">
-
         <ol class="breadcrumb">
-            <li><a href="{{path}}">{{ path }}</a></li>
+            <li data-ng-repeat="link in paths">
+                <a data-ng-if="$last == false" href="#/source/{{link.path}}">{{ link.name }}</a>
+                <a data-ng-if="$last == true" href="#/raw/{{link.path}}">{{ link.name }}</a>
+            </li>
         </ol>
-
     </div>
 
     <div class="panel panel-default">

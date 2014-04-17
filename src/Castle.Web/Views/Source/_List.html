@@ -1,16 +1,14 @@
 ﻿<div class="tab-pane active" id="source">
 
     <div class="source-header">
-
         <ol class="breadcrumb">
             <li data-ng-repeat="link in paths"><a href="#/source/{{link.path}}">{{ link.name }}</a></li>
         </ol>
-
     </div>
 
-    <div class="panel panel-info ng-cloak" data-ng-hide="loadingFiles">
-        <div class="panel-heading">rybaseman 30 minutes ago</div>
-        <table class="table">
+    <div class="panel panel-info ng-cloak" >
+        <div class="panel-heading">{{ lastChange }}</div>
+        <table class="table" data-ng-hide="loadingFiles">
             <tbody>
                 <tr data-ng-repeat="entry in files">
                     <td data-ng-if="entry.Kind == 1"><span class="glyphicon glyphicon-folder-close"></span> <a href="#/source/{{ entry.Path }}">{{ entry.Name }}</a></td>
