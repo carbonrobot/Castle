@@ -13,6 +13,10 @@ castle.app = angular.module('castle.app', ['ngRoute', 'castle.app.services', 'ca
                 controller: 'FileController',
                 templateUrl: '/views/source/_List.html'
             }).
+            when('/raw/:path*', {
+                controller: 'RawController',
+                templateUrl: '/views/source/_Raw.html'
+            }).
             otherwise({
                 redirectTo: '/source',
             });
