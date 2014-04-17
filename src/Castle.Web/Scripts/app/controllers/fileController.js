@@ -43,6 +43,6 @@ castle.app.controllers.controller('FileController', ['$scope', '$http', '$route'
     };
 
     // initialize using path
-    $scope.init($route.path);
+    $scope.init($route.current.params.path);
 
 }]);

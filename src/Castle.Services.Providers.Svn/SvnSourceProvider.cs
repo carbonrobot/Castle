@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using Castle.Domain;
 using SharpSvn;
 
@@ -181,6 +182,14 @@ namespace Castle.Services.Providers
         }
 
         /// <summary>
+        /// Strips the server host information from a file path
+        /// </summary>
+        private string GetServerRelativePath(Uri fileUri)
+        {
+            return Regex.Replace(fileUri.ToString(), this.options.Server, "", RegexOptions.IgnoreCase);
+        }
+        
+        /// <summary>
         /// Files the kind of the entry kind from node.
         /// </summary>
         /// <param name="nodeKind">Kind of the node.</param>
@@ -214,7 +223,7 @@ namespace Castle.Services.Providers
                     yield return new SourceFileInfo()
                     {
                         Name = item.Name,
-                        Path = item.Uri.ToString(),
+                        Path = GetServerRelativePath(item.Uri),
                         Kind = FileEntryKindFromNodeKind(item.Entry.NodeKind),
                         ChangeTime = item.Entry.Time,
                         Author = item.Entry.Author,
