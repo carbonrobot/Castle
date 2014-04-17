@@ -194,6 +194,7 @@
     <Content Include="Content\css\bootstrap\bootstrap-theme.css.map" />
     <Content Include="Content\css\bootstrap\bootstrap.css.map" />
     <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\controllers\fileController.js" />
     <Content Include="Scripts\app\controllers\projectController.js" />
     <Content Include="Scripts\app\controllers\repositoryController.js" />
     <Content Include="Scripts\app\services\projectService.js" />
