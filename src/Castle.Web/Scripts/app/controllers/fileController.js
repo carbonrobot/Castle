@@ -8,6 +8,7 @@ castle.app.controllers.controller('FileController', ['$scope', '$http', '$route'
     $scope.files = [];
     $scope.path = '';
     $scope.openFile = '';
+    $scope.paths = [];
 
     $scope.init = function (path) {
         // if no path was passed in, use the project path from the parent scope
@@ -18,7 +19,15 @@ castle.app.controllers.controller('FileController', ['$scope', '$http', '$route'
             $scope.path = path;
         }
 
+        // send a pigeon to get the file listing
         $scope.getFiles();
+
+        // break out the path into links
+        var parts = $scope.path.split('/');
+        for (i = 0; i < parts.length; i++) {
+            var linkPath = parts.slice(0, i + 1).join('/');
+            $scope.paths.push({ "name": parts[i], "path": linkPath });
+        }
     };
 
     // load files at this path

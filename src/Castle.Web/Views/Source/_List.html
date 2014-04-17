@@ -3,7 +3,7 @@
     <div class="source-header">
 
         <ol class="breadcrumb">
-            <li><a href="{{path}}">{{ path }}</a></li>
+            <li data-ng-repeat="link in paths"><a href="#/source/{{link.path}}">{{ link.name }}</a></li>
         </ol>
 
     </div>
