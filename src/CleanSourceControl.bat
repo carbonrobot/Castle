@@ -1,1 +1,1 @@
-for /d /r . %%d in (vssscc, vspscc) do @if exist "%%d" rd /s/q "%%d"
+for /d /r . %%d in (vssscc, vspscc, .git, .svn) do @if exist "%%d" rd /s/q "%%d"
