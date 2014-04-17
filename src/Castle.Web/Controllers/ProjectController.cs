@@ -4,6 +4,7 @@ using Castle.Web.Models.Project;
 
 namespace Castle.Web.Controllers
 {
+    [RoutePrefix("source")]
     public class ProjectController : DomainController
     {
         public ProjectController(DomainService service) : base(service) { }
