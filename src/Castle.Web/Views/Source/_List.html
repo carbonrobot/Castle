@@ -1,0 +1,32 @@
+﻿<div class="tab-pane active" id="source">
+
+    <div class="source-header">
+
+        <ol class="breadcrumb">
+            <li><a href="{{path}}">{{ path }}</a></li>
+        </ol>
+
+    </div>
+
+    <div class="panel panel-info ng-cloak" data-ng-hide="loadingFiles">
+        <div class="panel-heading">rybaseman 30 minutes ago</div>
+        <table class="table">
+            <tbody>
+                <tr data-ng-repeat="entry in files">
+                    <td><span class="glyphicon {{entry.Kind==1 && 'glyphicon-folder-close' || 'glyphicon-file'}}"></span> <a href="#/source/{{ entry.Path }}">{{ entry.Name }}</a></td>
+                    <td class="text-muted">{{ entry.Change }}</td>
+                    <td class="text-muted text-right">{{ entry.ChangeRelativeTime }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><span class="glyphicon glyphicon-file"></span> README.md</h3>
+        </div>
+        <div class="panel-body" data-ng-bind-html="openFile">
+        </div>
+    </div>
+
+</div>

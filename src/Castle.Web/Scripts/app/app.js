@@ -6,12 +6,10 @@ castle.app = angular.module('castle.app', ['ngRoute', 'castle.app.services', 'ca
     .config(function ($routeProvider, $locationProvider) {
         $routeProvider.
             when('/source', {
-                controller: 'ProjectController',
-                templateUrl: '/views/project/_index.html'
+                templateUrl: '/views/source/_List.html'
             }).
             when('/source/:path*', {
-                controller: 'ProjectController',
-                templateUrl: '/views/project/_index.html'
+                templateUrl: '/views/source/_List.html'
             }).
             otherwise({
                 redirectTo: '/source',

@@ -20,15 +20,7 @@ castle.app.controllers.controller('ProjectController', ['$scope', '$http', 'sour
         $scope.getFiles();
         $scope.getReadme();
     };
-
-    // get project information
-    $scope.getProject = function () {
-        $scope.loadingProject = true;
-        projectService.getProjectByKey(key, function (data) {
-
-        });
-    };
-
+    
     // load files at this path
     $scope.getFiles = function () {
         $scope.loadingFiles = true;

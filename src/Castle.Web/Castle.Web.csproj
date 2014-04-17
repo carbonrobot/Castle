@@ -243,8 +243,7 @@
     <Content Include="Views\Source\_History.cshtml" />
     <Content Include="Views\Repository\Index.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
-    <Content Include="Views\Project\_index.html" />
-    <Content Include="Views\Project\_temp.cshtml" />
+    <Content Include="Views\Source\_List.html" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Castle.Domain.Data\Castle.Domain.Data.csproj">
