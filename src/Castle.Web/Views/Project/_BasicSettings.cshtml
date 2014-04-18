@@ -1,0 +1,28 @@
+﻿@model Castle.Web.Models.Project.ProjectViewModel
+<div class="panel panel-info panel-form">
+    <div class="panel-heading">
+        <div class="panel-title">Basic Settings</div>
+    </div>
+
+    <div class="panel-body">
+        <form role="form" method="post" data-ng-non-bindable>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-bookmark"></i></span>
+                    <input type="text" class="form-control" name="project.name" placeholder="Project Name" autofocus="autofocus" value="@Model.Project.Name" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-random"></i></span>
+                    <input type="text" class="form-control" name="project.path" placeholder="Project Path" value="@Model.Project.Path" />
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a href="/source/@Model.Project.Key" class="btn btn-default">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -87,5 +87,6 @@ namespace Castle.Web.Controllers
 
             return RedirectToAction("Settings", new { repositoryKey = response.Result.Key });
         }
+
     }
 }

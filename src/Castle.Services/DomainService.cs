@@ -35,6 +35,19 @@ namespace Castle.Services
         }
 
         /// <summary>
+        /// Deletes a project by its key
+        /// </summary>
+        public ServiceResponse DeleteProject(string key)
+        {
+            Action func = () =>
+            {
+                var repository = this.DataContext.AsQueryable<Project>().Single(x => x.Key.Equals(key, StringComparison.InvariantCultureIgnoreCase));
+                this.DataContext.Delete(repository);
+            };
+            return this.Execute(func);
+        }
+
+        /// <summary>
         /// Deletes a repository by its key
         /// </summary>
         public ServiceResponse DeleteRepository(string key)
@@ -60,6 +73,26 @@ namespace Castle.Services
                              select p);
 
                 return query.Single();
+            };
+            return this.Execute(func);
+        }
+
+        /// <summary>
+        /// Creates a new project for a repository
+        /// </summary>
+        /// <returns>The project</returns>
+        public ServiceResponse<Project> CreateProject(string repositoryKey, string projectName, string path)
+        {
+            Func<Project> func = () =>
+            {
+                var repository = this.DataContext.AsQueryable<Repository>().Single(x => x.Key.Equals(repositoryKey, StringComparison.InvariantCultureIgnoreCase));
+                var project = new Project()
+                {
+                    RepositoryId = repository.Id,
+                    Name = projectName,
+                    Path = path
+                };
+                return this.DataContext.Save(project);
             };
             return this.Execute(func);
         }
@@ -146,6 +179,20 @@ namespace Castle.Services
                 var repository = this.DataContext.AsQueryable<Repository>().Single(x => x.Key.Equals(key, StringComparison.InvariantCultureIgnoreCase));
                 var history = this.SourceProvider.GetHistory(repository.Path, days);
                 return history.OrderByDescending(x => x.Time);
+            };
+            return this.Execute(func);
+        }
+
+        /// <summary>
+        /// Updates the project.
+        /// </summary>
+        /// <param name="project">The project.</param>
+        /// <returns>ServiceResponse&lt;Project&gt;.</returns>
+        public ServiceResponse<Project> UpdateProject(Project project)
+        {
+            Func<Project> func = () =>
+            {
+                return this.DataContext.Save(project);
             };
             return this.Execute(func);
         }

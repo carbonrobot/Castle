@@ -251,6 +251,8 @@
     <Content Include="Views\Repository\Create.cshtml" />
     <Content Include="Views\Repository\Settings.cshtml" />
     <Content Include="Views\Repository\_BasicSettings.cshtml" />
+    <Content Include="Views\Project\Create.cshtml" />
+    <Content Include="Views\Project\_BasicSettings.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Castle.Domain.Data\Castle.Domain.Data.csproj">
