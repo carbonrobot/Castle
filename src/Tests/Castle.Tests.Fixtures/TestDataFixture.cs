@@ -6,7 +6,7 @@ using Castle.Domain.Data;
 
 namespace Castle.Tests.Fixtures
 {
-    public class TestDataFixture : DropCreateDatabaseAlways<DataContext>
+    public class TestDataFixture : DropCreateDatabaseIfModelChanges<DataContext>
     {
         protected override void Seed(DataContext context)
         {
