@@ -7,9 +7,9 @@ namespace Castle.Web.Controllers
     {
         public DomainController(DomainService service)
         {
-            this.ProjectService = service;
+            this.DomainService = service;
         }
 
-        protected readonly DomainService ProjectService;
+        protected readonly DomainService DomainService;
     }
 }

@@ -1,0 +1,33 @@
+﻿@model Castle.Web.Models.Repository.RepositoryViewModel
+<div class="panel panel-info panel-form">
+    <div class="panel-heading">
+        <div class="panel-title">Basic Settings</div>
+    </div>
+
+    <div class="panel-body">
+        <form role="form" method="post" data-ng-non-bindable>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-bookmark"></i></span>
+                    <input type="text" class="form-control" name="repository.name" placeholder="Repository Name" autofocus="autofocus" value="@Model.Repository.Name" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-random"></i></span>
+                    <input type="text" class="form-control" name="repository.path" placeholder="Repository Path" value="@Model.Repository.Path" />
+                </div>
+                <p class="help-block">
+                    Enter the server relative repository path.
+                    For example, if the full path is <code>https://subversion/svn/repository</code> then the path would be <code>repository</code>.
+                    Please note, this value is case-sensitive and must match SVN exactly.
+                </p>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a href="/source/@Model.Repository.Key" class="btn btn-default">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

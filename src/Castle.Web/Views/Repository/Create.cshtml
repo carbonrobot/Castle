@@ -3,40 +3,15 @@
     ViewBag.Group = "source";
 }
 
-<div class="container drop">
-    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-        <div class="panel panel-info panel-form">
-            <div class="panel-heading">
-                <div class="panel-title">New Repository</div>
-            </div>
+<div class="page-header">
+    <h1 class="page-title">Create Repository</h1>
+</div>
 
-            <div class="panel-body">
-                <form role="form" method="post">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-bookmark"></i></span>
-                            <input type="text" class="form-control" name="repository.name" placeholder="Repository Name" autofocus="autofocus" />
-                        </div>
-                    </div>
 
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-random"></i></span>
-                            <input type="text" class="form-control" name="repository.path" placeholder="Repository Path" />
-                        </div>
-                        <p class="help-block">
-                            Enter the server relative repository path.
-                            For example, if the full path is <code>https://subversion/svn/repository</code> then the path would be <code>repository</code>.
-                            Please note, this value is case-sensitive and must match SVN exactly.
-                        </p>
-                    </div>
-
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Create</button>
-                        <a href="/" class="btn btn-default">Cancel</a>
-                    </div>
-                </form>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+            @Html.Partial("_BasicSettings")
         </div>
     </div>
 </div>

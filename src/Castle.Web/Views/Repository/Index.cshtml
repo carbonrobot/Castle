@@ -11,7 +11,15 @@
 <div class="row" data-ng-controller="RepositoryController">
 
     <div class="col-md-4 col-md-push-8">
-        <div class="panel panel-default">
+        <div class="clearfix">
+            <div class="pull-right">
+                <a href="/repository/@Model.Repository.Key/settings" class="btn btn-default">
+                    <span class="glyphicon glyphicon-cog"></span>
+                </a>
+            </div>
+        </div>
+
+        <div class="panel panel-default drop">
             <div class="panel-heading">
                 <div class="clearfix">
                     <div class="pull-left">

@@ -1,0 +1,43 @@
+﻿@model Castle.Web.Models.Repository.RepositoryViewModel
+@{
+    ViewBag.Title = "Settings";
+    ViewBag.Group = "source";
+}
+
+<div class="page-header">
+    <h1 class="page-title"><a href="/source/@Model.Repository.Key">@Model.Repository.Name</a></h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+            @Html.Partial("_BasicSettings")
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        Danger Zone
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="clearfix">
+                        <div class="pull-left">
+                            <strong>Delete this repository</strong><br/>
+                            Once you delete this repository, there is no going back. Please be certain.
+                        </div>
+                        <div class="pull-right">
+                            <form method="post" action="/repository/@Model.Repository.Key/delete" data-ng-non-bindable>
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

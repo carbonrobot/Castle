@@ -15,7 +15,7 @@ namespace Castle.Web.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var response = this.ProjectService.GetRepositories();
+            var response = this.DomainService.GetRepositories();
 
             // TODO: handle errors
 

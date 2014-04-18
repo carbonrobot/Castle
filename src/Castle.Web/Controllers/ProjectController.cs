@@ -12,7 +12,7 @@ namespace Castle.Web.Controllers
         [HttpGet, Route("{repositoryKey}/{projectKey}")]
         public ActionResult Index(string repositoryKey, string projectKey)
         {
-            var response = this.ProjectService.GetProject(projectKey);
+            var response = this.DomainService.GetProject(projectKey);
 
             // TODO: handle errors
 

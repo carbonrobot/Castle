@@ -15,6 +15,39 @@ namespace Castle.Services
         }
 
         /// <summary>
+        /// Creates a new repository with the given name.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="path">The path.</param>
+        /// <returns>ServiceResponse&lt;Repository&gt;.</returns>
+        public ServiceResponse<Repository> CreateRepository(string name, string path)
+        {
+            Func<Repository> func = () =>
+            {
+                var repository = new Repository()
+                {
+                    Name = name,
+                    Path = path
+                };
+                return this.DataContext.Save(repository);
+            };
+            return this.Execute(func);
+        }
+
+        /// <summary>
+        /// Deletes a repository by its key
+        /// </summary>
+        public ServiceResponse DeleteRepository(string key)
+        {
+            Action func = () =>
+            {
+                var repository = this.DataContext.AsQueryable<Repository>().Single(x => x.Key.Equals(key, StringComparison.InvariantCultureIgnoreCase));
+                this.DataContext.Delete(repository);
+            };
+            return this.Execute(func);
+        }
+
+        /// <summary>
         /// Gets a project by its key
         /// </summary>
         /// <returns>The project</returns>
@@ -113,6 +146,20 @@ namespace Castle.Services
                 var repository = this.DataContext.AsQueryable<Repository>().Single(x => x.Key.Equals(key, StringComparison.InvariantCultureIgnoreCase));
                 var history = this.SourceProvider.GetHistory(repository.Path, days);
                 return history.OrderByDescending(x => x.Time);
+            };
+            return this.Execute(func);
+        }
+
+        /// <summary>
+        /// Updates the repository.
+        /// </summary>
+        /// <param name="repository">The repository.</param>
+        /// <returns>ServiceResponse&lt;Repository&gt;.</returns>
+        public ServiceResponse<Repository> UpdateRepository(Repository repository)
+        {
+            Func<Repository> func = () =>
+            {
+                return this.DataContext.Save(repository);
             };
             return this.Execute(func);
         }
