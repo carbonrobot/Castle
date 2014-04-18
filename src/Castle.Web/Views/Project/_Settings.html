@@ -1,0 +1,60 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+            <div class="panel panel-info panel-form">
+                <div class="panel-heading">
+                    <div class="panel-title">Basic Settings</div>
+                </div>
+
+                <div class="panel-body">
+                    <form role="form" method="post" data-ng-submit="updateProject()">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-bookmark"></i></span>
+                                <input type="text" class="form-control" name="name" placeholder="Project Name" autofocus="autofocus" data-ng-model="project.Name" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-random"></i></span>
+                                <input type="text" class="form-control" name="path" placeholder="Project Path" data-ng-model="project.Path" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <a href="#/settings" class="btn btn-default">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        Danger Zone
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="clearfix">
+                        <div class="pull-left">
+                            <strong>Delete this project</strong><br />
+                            Once you delete this project, there is no going back. Please be certain.
+                        </div>
+                        <div class="pull-right">
+                            <form method="post" data-ng-submit="deleteProject()">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
