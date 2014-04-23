@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="AsQueryable(Of T) method" Url="html/87B1E868.htm" />
+  <HelpKINode Title="AsQueryable&lt;T&gt; method" Url="html/87B1E868.htm" />
+  <HelpKINode Title="Castle.Services namespace" Url="html/3998FB64.htm" />
+  <HelpKINode Title="Castle.Services.DataService class" Url="html/E2B25249.htm" />
+  <HelpKINode Title="Castle.Services.DomainService class" Url="html/58C6BDD9.htm" />
+  <HelpKINode Title="Castle.Services.Logging namespace" Url="html/84965DF1.htm" />
+  <HelpKINode Title="Castle.Services.Logging.ILog interface" Url="html/BBB05CE.htm" />
+  <HelpKINode Title="Castle.Services.Logging.ILog(Of T) interface" Url="html/503A7E39.htm" />
+  <HelpKINode Title="Castle.Services.Logging.ILog&lt;T&gt; interface" Url="html/503A7E39.htm" />
+  <HelpKINode Title="Castle.Services.Logging.Log class" Url="html/65AE9565.htm" />
+  <HelpKINode Title="Castle.Services.Logging.LogExtensions class" Url="html/747B23B.htm" />
+  <HelpKINode Title="Castle.Services.Logging.NullLog class" Url="html/7BD6CFC6.htm" />
+  <HelpKINode Title="Castle.Services.Providers namespace" Url="html/166523D0.htm" />
+  <HelpKINode Title="Castle.Services.Providers.IDataContext interface" Url="html/675AD2F6.htm" />
+  <HelpKINode Title="Castle.Services.Providers.ISourceProvider interface" Url="html/8109FE41.htm" />
+  <HelpKINode Title="Castle.Services.ServiceBase class" Url="html/65AA054A.htm" />
+  <HelpKINode Title="Castle.Services.ServiceResponse class" Url="html/FFE14038.htm" />
+  <HelpKINode Title="Castle.Services.ServiceResponse(Of T) class" Url="html/FD3D8D27.htm" />
+  <HelpKINode Title="Castle.Services.ServiceResponse&lt;T&gt; class" Url="html/FD3D8D27.htm" />
+  <HelpKINode Title="Castle.Services.SourceService class" Url="html/DC4BE8BC.htm" />
+  <HelpKINode Title="CreateProject method" Url="html/31548043.htm" />
+  <HelpKINode Title="CreateRepository method" Url="html/F429C346.htm" />
+  <HelpKINode Title="DataContext field" Url="html/8FE3F038.htm" />
+  <HelpKINode Title="DataService class">
+    <HelpKINode Title="DataService Class" Url="html/E2B25249.htm" />
+    <HelpKINode Title="about DataService class" Url="html/E2B25249.htm" />
+    <HelpKINode Title="constructor" Url="html/98D74717.htm" />
+    <HelpKINode Title="fields" Url="html/D229C3AC.htm" />
+    <HelpKINode Title="methods" Url="html/F6026C7F.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DataService.DataContext field" Url="html/8FE3F038.htm" />
+  <HelpKINode Title="DataService.DataService constructor" Url="html/98D74717.htm" />
+  <HelpKINode Title="Debug method">
+    <HelpKINode Title="ILog.Debug Method " Url="html/52EC0927.htm" />
+    <HelpKINode Title="NullLog.Debug Method " Url="html/B4B099D9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Delete method" Url="html/C1D01DC9.htm" />
+  <HelpKINode Title="DeleteProject method" Url="html/BBE6F1C2.htm" />
+  <HelpKINode Title="DeleteRepository method" Url="html/68FFD9E9.htm" />
+  <HelpKINode Title="DomainService class">
+    <HelpKINode Title="DomainService Class" Url="html/58C6BDD9.htm" />
+    <HelpKINode Title="about DomainService class" Url="html/58C6BDD9.htm" />
+    <HelpKINode Title="constructor" Url="html/C1BF4AA7.htm" />
+    <HelpKINode Title="fields" Url="html/5EBFEFFC.htm" />
+    <HelpKINode Title="methods" Url="html/73335FCF.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DomainService.CreateProject method" Url="html/31548043.htm" />
+  <HelpKINode Title="DomainService.CreateRepository method" Url="html/F429C346.htm" />
+  <HelpKINode Title="DomainService.DeleteProject method" Url="html/BBE6F1C2.htm" />
+  <HelpKINode Title="DomainService.DeleteRepository method" Url="html/68FFD9E9.htm" />
+  <HelpKINode Title="DomainService.DomainService constructor" Url="html/C1BF4AA7.htm" />
+  <HelpKINode Title="DomainService.GetProject method" Url="html/AE8A7F19.htm" />
+  <HelpKINode Title="DomainService.GetProjectHistory method" Url="html/C97622DF.htm" />
+  <HelpKINode Title="DomainService.GetProjects method" Url="html/E32AAA6C.htm" />
+  <HelpKINode Title="DomainService.GetRepositories method" Url="html/3DD6E2CA.htm" />
+  <HelpKINode Title="DomainService.GetRepository method" Url="html/8ED87B52.htm" />
+  <HelpKINode Title="DomainService.GetRepositoryHistory method" Url="html/B822A9E.htm" />
+  <HelpKINode Title="DomainService.UpdateProject method" Url="html/6D7E7870.htm" />
+  <HelpKINode Title="DomainService.UpdateRepository method" Url="html/CAE83385.htm" />
+  <HelpKINode Title="Error method">
+    <HelpKINode Title="ILog.Error Method " Url="html/C97EAA84.htm" />
+    <HelpKINode Title="NullLog.Error Method " Url="html/F06532E0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Exception property" Url="html/1881DDF3.htm" />
+  <HelpKINode Title="Execute method" Url="html/2D4EF935.htm" />
+  <HelpKINode Title="Fatal method">
+    <HelpKINode Title="ILog.Fatal Method " Url="html/D4BA8CC4.htm" />
+    <HelpKINode Title="NullLog.Fatal Method " Url="html/6098BC88.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Find(Of T) method" Url="html/E9042B69.htm" />
+  <HelpKINode Title="Find&lt;T&gt; method" Url="html/E9042B69.htm" />
+  <HelpKINode Title="FormatWith method" Url="html/3953BF65.htm" />
+  <HelpKINode Title="Get(Of T) method" Url="html/3D5DFD74.htm" />
+  <HelpKINode Title="Get&lt;T&gt; method" Url="html/3D5DFD74.htm" />
+  <HelpKINode Title="GetFileContent method">
+    <HelpKINode Title="ISourceProvider.GetFileContent Method " Url="html/63A5D9D7.htm" />
+    <HelpKINode Title="SourceService.GetFileContent Method " Url="html/42A74378.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetFileInfo method" Url="html/A0426341.htm" />
+  <HelpKINode Title="GetFiles method" Url="html/D07E97E9.htm" />
+  <HelpKINode Title="GetHistory method" Url="html/2D7E6B46.htm" />
+  <HelpKINode Title="GetLoggerFor method" Url="html/1E3CFDB3.htm" />
+  <HelpKINode Title="GetProject method" Url="html/AE8A7F19.htm" />
+  <HelpKINode Title="GetProjectHistory method" Url="html/C97622DF.htm" />
+  <HelpKINode Title="GetProjects method" Url="html/E32AAA6C.htm" />
+  <HelpKINode Title="GetRepositories method" Url="html/3DD6E2CA.htm" />
+  <HelpKINode Title="GetRepository method" Url="html/8ED87B52.htm" />
+  <HelpKINode Title="GetRepositoryHistory method" Url="html/B822A9E.htm" />
+  <HelpKINode Title="HasError property" Url="html/B51209C8.htm" />
+  <HelpKINode Title="IDataContext interface">
+    <HelpKINode Title="IDataContext Interface" Url="html/675AD2F6.htm" />
+    <HelpKINode Title="about IDataContext interface" Url="html/675AD2F6.htm" />
+    <HelpKINode Title="methods" Url="html/EAC09396.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDataContext.AsQueryable(Of T) method" Url="html/87B1E868.htm" />
+  <HelpKINode Title="IDataContext.AsQueryable&lt;T&gt; method" Url="html/87B1E868.htm" />
+  <HelpKINode Title="IDataContext.Delete method" Url="html/C1D01DC9.htm" />
+  <HelpKINode Title="IDataContext.Find(Of T) method" Url="html/E9042B69.htm" />
+  <HelpKINode Title="IDataContext.Find&lt;T&gt; method" Url="html/E9042B69.htm" />
+  <HelpKINode Title="IDataContext.Get(Of T) method" Url="html/3D5DFD74.htm" />
+  <HelpKINode Title="IDataContext.Get&lt;T&gt; method" Url="html/3D5DFD74.htm" />
+  <HelpKINode Title="IDataContext.Save(Of T) method" Url="html/BE2EDEE1.htm" />
+  <HelpKINode Title="IDataContext.Save&lt;T&gt; method" Url="html/BE2EDEE1.htm" />
+  <HelpKINode Title="ILog interface">
+    <HelpKINode Title="ILog Interface" Url="html/BBB05CE.htm" />
+    <HelpKINode Title="about ILog interface" Url="html/BBB05CE.htm" />
+    <HelpKINode Title="methods" Url="html/5895834E.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ILog(Of T) interface">
+    <HelpKINode Title="ILog(T) Interface" Url="html/503A7E39.htm" />
+    <HelpKINode Title="about ILog(Of T) interface" Url="html/503A7E39.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ILog.Debug method" Url="html/52EC0927.htm" />
+  <HelpKINode Title="ILog.Error method" Url="html/C97EAA84.htm" />
+  <HelpKINode Title="ILog.Fatal method" Url="html/D4BA8CC4.htm" />
+  <HelpKINode Title="ILog.Info method" Url="html/CAB28E7A.htm" />
+  <HelpKINode Title="ILog.InitializeFor method" Url="html/CD195880.htm" />
+  <HelpKINode Title="ILog.Warn method" Url="html/3075152A.htm" />
+  <HelpKINode Title="ILog&lt;T&gt; interface">
+    <HelpKINode Title="ILog(T) Interface" Url="html/503A7E39.htm" />
+    <HelpKINode Title="about ILog&lt;T&gt; interface" Url="html/503A7E39.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Info method">
+    <HelpKINode Title="ILog.Info Method " Url="html/CAB28E7A.htm" />
+    <HelpKINode Title="NullLog.Info Method " Url="html/1FBF9FB2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InitializeFor method">
+    <HelpKINode Title="ILog.InitializeFor Method " Url="html/CD195880.htm" />
+    <HelpKINode Title="NullLog.InitializeFor Method " Url="html/FDC22A92.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InitializeWith method" Url="html/E821621.htm" />
+  <HelpKINode Title="ISourceProvider interface">
+    <HelpKINode Title="ISourceProvider Interface" Url="html/8109FE41.htm" />
+    <HelpKINode Title="about ISourceProvider interface" Url="html/8109FE41.htm" />
+    <HelpKINode Title="methods" Url="html/78E50EAB.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ISourceProvider.GetFileContent method" Url="html/63A5D9D7.htm" />
+  <HelpKINode Title="ISourceProvider.GetFiles method" Url="html/D07E97E9.htm" />
+  <HelpKINode Title="ISourceProvider.GetHistory method" Url="html/2D7E6B46.htm" />
+  <HelpKINode Title="Log class">
+    <HelpKINode Title="Log Class" Url="html/65AE9565.htm" />
+    <HelpKINode Title="about Log class" Url="html/65AE9565.htm" />
+    <HelpKINode Title="methods" Url="html/4A1756A7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Log method" Url="html/AF67011.htm" />
+  <HelpKINode Title="Log.GetLoggerFor method" Url="html/1E3CFDB3.htm" />
+  <HelpKINode Title="Log.InitializeWith method" Url="html/E821621.htm" />
+  <HelpKINode Title="LogExtensions class">
+    <HelpKINode Title="LogExtensions Class" Url="html/747B23B.htm" />
+    <HelpKINode Title="about LogExtensions class" Url="html/747B23B.htm" />
+    <HelpKINode Title="methods" Url="html/16C193D.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LogExtensions.FormatWith method" Url="html/3953BF65.htm" />
+  <HelpKINode Title="LogExtensions.Log method" Url="html/AF67011.htm" />
+  <HelpKINode Title="NullLog class">
+    <HelpKINode Title="NullLog Class" Url="html/7BD6CFC6.htm" />
+    <HelpKINode Title="about NullLog class" Url="html/7BD6CFC6.htm" />
+    <HelpKINode Title="constructor" Url="html/362ED1C0.htm" />
+    <HelpKINode Title="methods" Url="html/81FECE12.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NullLog.Debug method" Url="html/B4B099D9.htm" />
+  <HelpKINode Title="NullLog.Error method" Url="html/F06532E0.htm" />
+  <HelpKINode Title="NullLog.Fatal method" Url="html/6098BC88.htm" />
+  <HelpKINode Title="NullLog.Info method" Url="html/1FBF9FB2.htm" />
+  <HelpKINode Title="NullLog.InitializeFor method" Url="html/FDC22A92.htm" />
+  <HelpKINode Title="NullLog.NullLog constructor" Url="html/362ED1C0.htm" />
+  <HelpKINode Title="NullLog.Warn method" Url="html/8FE7546E.htm" />
+  <HelpKINode Title="Result property" Url="html/E7978EA2.htm" />
+  <HelpKINode Title="Save(Of T) method" Url="html/BE2EDEE1.htm" />
+  <HelpKINode Title="Save&lt;T&gt; method" Url="html/BE2EDEE1.htm" />
+  <HelpKINode Title="ServiceBase class">
+    <HelpKINode Title="ServiceBase Class" Url="html/65AA054A.htm" />
+    <HelpKINode Title="about ServiceBase class" Url="html/65AA054A.htm" />
+    <HelpKINode Title="constructor" Url="html/D07F0960.htm" />
+    <HelpKINode Title="methods" Url="html/3BDB057E.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ServiceBase.Execute method" Url="html/2D4EF935.htm" />
+  <HelpKINode Title="ServiceBase.ServiceBase constructor" Url="html/D07F0960.htm" />
+  <HelpKINode Title="ServiceResponse class">
+    <HelpKINode Title="ServiceResponse Class" Url="html/FFE14038.htm" />
+    <HelpKINode Title="about ServiceResponse class" Url="html/FFE14038.htm" />
+    <HelpKINode Title="constructor" Url="html/82301A3E.htm" />
+    <HelpKINode Title="methods" Url="html/111BB8D4.htm" />
+    <HelpKINode Title="properties" Url="html/D7C2BDA1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ServiceResponse(Of T) class">
+    <HelpKINode Title="ServiceResponse(T) Class" Url="html/FD3D8D27.htm" />
+    <HelpKINode Title="about ServiceResponse(Of T) class" Url="html/FD3D8D27.htm" />
+    <HelpKINode Title="constructor" Url="html/A1ED700D.htm" />
+    <HelpKINode Title="methods" Url="html/89816685.htm" />
+    <HelpKINode Title="properties" Url="html/F227C34C.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ServiceResponse(Of T).Result property" Url="html/E7978EA2.htm" />
+  <HelpKINode Title="ServiceResponse(Of T).ServiceResponse constructor" Url="html/A1ED700D.htm" />
+  <HelpKINode Title="ServiceResponse.Exception property" Url="html/1881DDF3.htm" />
+  <HelpKINode Title="ServiceResponse.HasError property" Url="html/B51209C8.htm" />
+  <HelpKINode Title="ServiceResponse.ServiceResponse constructor" Url="html/82301A3E.htm" />
+  <HelpKINode Title="ServiceResponse&lt;T&gt; class">
+    <HelpKINode Title="ServiceResponse(T) Class" Url="html/FD3D8D27.htm" />
+    <HelpKINode Title="about ServiceResponse&lt;T&gt; class" Url="html/FD3D8D27.htm" />
+    <HelpKINode Title="constructor" Url="html/A1ED700D.htm" />
+    <HelpKINode Title="methods" Url="html/89816685.htm" />
+    <HelpKINode Title="properties" Url="html/F227C34C.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ServiceResponse&lt;T&gt;.Result property" Url="html/E7978EA2.htm" />
+  <HelpKINode Title="ServiceResponse&lt;T&gt;.ServiceResponse constructor" Url="html/A1ED700D.htm" />
+  <HelpKINode Title="SourceService class">
+    <HelpKINode Title="SourceService Class" Url="html/DC4BE8BC.htm" />
+    <HelpKINode Title="about SourceService class" Url="html/DC4BE8BC.htm" />
+    <HelpKINode Title="constructor" Url="html/8BD9A5B2.htm" />
+    <HelpKINode Title="methods" Url="html/6C431F7C.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SourceService.GetFileContent method" Url="html/42A74378.htm" />
+  <HelpKINode Title="SourceService.GetFileInfo method" Url="html/A0426341.htm" />
+  <HelpKINode Title="SourceService.SourceService constructor" Url="html/8BD9A5B2.htm" />
+  <HelpKINode Title="UpdateProject method" Url="html/6D7E7870.htm" />
+  <HelpKINode Title="UpdateRepository method" Url="html/CAE83385.htm" />
+  <HelpKINode Title="Warn method">
+    <HelpKINode Title="ILog.Warn Method " Url="html/3075152A.htm" />
+    <HelpKINode Title="NullLog.Warn Method " Url="html/8FE7546E.htm" />
+  </HelpKINode>
+</HelpKI>

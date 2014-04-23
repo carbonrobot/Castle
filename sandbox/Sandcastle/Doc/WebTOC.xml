@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="234bed2b-5b38-4967-8e40-97dbfddb82b4" Title="Namespaces" Url="html/DDA25B2.htm">
+    <HelpTOCNode Id="408e6d3f-7e67-4d10-93f7-a9657b47e2ab" Title="Castle Namespaces" Url="html/E1A57FC9.htm">
+      <HelpTOCNode Id="ef3598ac-01cd-42b9-b3c2-5f254499aa57" Title="Castle.Services Namespaces" Url="html/3A4FC4DD.htm">
+        <HelpTOCNode Id="20a7ef37-f873-47a5-b6f5-6ac59b45c583" Title="Castle.Services Namespace" Url="html/3998FB64.htm">
+          <HelpTOCNode Id="b4d624e2-5071-48b9-9a6a-0e8067561c0a" Title="DataService Class" Url="html/E2B25249.htm">
+            <HelpTOCNode Title="DataService Constructor " Url="html/98D74717.htm" />
+            <HelpTOCNode Id="8d6cd787-8ed9-4fe7-90b2-abdeca7c9b67" Title="DataService Fields" Url="html/D229C3AC.htm">
+              <HelpTOCNode Title="DataContext Field" Url="html/8FE3F038.htm" />
+            </HelpTOCNode>
+            <HelpTOCNode Title="DataService Methods" Url="html/F6026C7F.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="4e3f50b2-9897-4637-9a42-624c25b2a748" Title="DomainService Class" Url="html/58C6BDD9.htm">
+            <HelpTOCNode Title="DomainService Constructor " Url="html/C1BF4AA7.htm" />
+            <HelpTOCNode Title="DomainService Fields" Url="html/5EBFEFFC.htm" />
+            <HelpTOCNode Id="5b5be99b-d538-419e-8d12-dcbe555ef540" Title="DomainService Methods" Url="html/73335FCF.htm">
+              <HelpTOCNode Title="CreateProject Method " Url="html/31548043.htm" />
+              <HelpTOCNode Title="CreateRepository Method " Url="html/F429C346.htm" />
+              <HelpTOCNode Title="DeleteProject Method " Url="html/BBE6F1C2.htm" />
+              <HelpTOCNode Title="DeleteRepository Method " Url="html/68FFD9E9.htm" />
+              <HelpTOCNode Title="GetProject Method " Url="html/AE8A7F19.htm" />
+              <HelpTOCNode Title="GetProjectHistory Method " Url="html/C97622DF.htm" />
+              <HelpTOCNode Title="GetProjects Method " Url="html/E32AAA6C.htm" />
+              <HelpTOCNode Title="GetRepositories Method " Url="html/3DD6E2CA.htm" />
+              <HelpTOCNode Title="GetRepository Method " Url="html/8ED87B52.htm" />
+              <HelpTOCNode Title="GetRepositoryHistory Method " Url="html/B822A9E.htm" />
+              <HelpTOCNode Title="UpdateProject Method " Url="html/6D7E7870.htm" />
+              <HelpTOCNode Title="UpdateRepository Method " Url="html/CAE83385.htm" />
+            </HelpTOCNode>
+          </HelpTOCNode>
+          <HelpTOCNode Id="9216d07d-11ba-4768-a2de-25279790869f" Title="ServiceBase Class" Url="html/65AA054A.htm">
+            <HelpTOCNode Title="ServiceBase Constructor " Url="html/D07F0960.htm" />
+            <HelpTOCNode Id="0ad3c5c6-f663-40b0-b6ed-403bd69acc3c" Title="ServiceBase Methods" Url="html/3BDB057E.htm">
+              <HelpTOCNode Id="e072e7df-be01-41de-9f72-505696e7cede" Title="Execute Method " Url="html/2D4EF935.htm">
+                <HelpTOCNode Title="Execute Method (Action)" Url="html/E38BC05C.htm" />
+                <HelpTOCNode Title="Execute(T) Method (Func(T))" Url="html/36444BB1.htm" />
+              </HelpTOCNode>
+            </HelpTOCNode>
+          </HelpTOCNode>
+          <HelpTOCNode Id="f929f631-ef0b-4c72-abf8-dca3c2e0187e" Title="ServiceResponse Class" Url="html/FFE14038.htm">
+            <HelpTOCNode Title="ServiceResponse Constructor " Url="html/82301A3E.htm" />
+            <HelpTOCNode Title="ServiceResponse Methods" Url="html/111BB8D4.htm" />
+            <HelpTOCNode Id="3f97ec18-b36e-43ff-ae58-9834f5b90a8b" Title="ServiceResponse Properties" Url="html/D7C2BDA1.htm">
+              <HelpTOCNode Title="Exception Property " Url="html/1881DDF3.htm" />
+              <HelpTOCNode Title="HasError Property " Url="html/B51209C8.htm" />
+            </HelpTOCNode>
+          </HelpTOCNode>
+          <HelpTOCNode Id="9fbd830f-3f8e-49e5-9a2e-16e01359f145" Title="ServiceResponse(T) Class" Url="html/FD3D8D27.htm">
+            <HelpTOCNode Title="ServiceResponse(T) Constructor " Url="html/A1ED700D.htm" />
+            <HelpTOCNode Title="ServiceResponse(T) Methods" Url="html/89816685.htm" />
+            <HelpTOCNode Id="f798ff3c-c78a-4224-aa74-7fda922e97bb" Title="ServiceResponse(T) Properties" Url="html/F227C34C.htm">
+              <HelpTOCNode Title="Result Property " Url="html/E7978EA2.htm" />
+            </HelpTOCNode>
+          </HelpTOCNode>
+          <HelpTOCNode Id="27dff527-9be9-4717-80a1-5df74bcdde34" Title="SourceService Class" Url="html/DC4BE8BC.htm">
+            <HelpTOCNode Title="SourceService Constructor " Url="html/8BD9A5B2.htm" />
+            <HelpTOCNode Id="41d334f6-f795-4f00-a651-50d2101eca98" Title="SourceService Methods" Url="html/6C431F7C.htm">
+              <HelpTOCNode Title="GetFileContent Method " Url="html/42A74378.htm" />
+              <HelpTOCNode Title="GetFileInfo Method " Url="html/A0426341.htm" />
+            </HelpTOCNode>
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="0bb022da-7ab3-4c41-9180-7ebb9fd5b2e5" Title="Castle.Services.Logging Namespace" Url="html/84965DF1.htm">
+          <HelpTOCNode Id="6c5ae0aa-37f1-4b35-b5cf-9eb5924e53ad" Title="ILog Interface" Url="html/BBB05CE.htm">
+            <HelpTOCNode Id="48dcbc22-d49a-4f00-888c-bdcc67d5473d" Title="ILog Methods" Url="html/5895834E.htm">
+              <HelpTOCNode Id="537f164e-c1ed-4d9d-9929-ec02c5a15d20" Title="Debug Method " Url="html/52EC0927.htm">
+                <HelpTOCNode Title="Debug Method (Func(String))" Url="html/170236CA.htm" />
+                <HelpTOCNode Title="Debug Method (String, Object[])" Url="html/7F18E576.htm" />
+              </HelpTOCNode>
+              <HelpTOCNode Id="21b4a94b-5363-4ea3-afce-b6b7f080ecd4" Title="Error Method " Url="html/C97EAA84.htm">
+                <HelpTOCNode Title="Error Method (Func(String))" Url="html/B4E4659B.htm" />
+                <HelpTOCNode Title="Error Method (String, Object[])" Url="html/D940EE5D.htm" />
+              </HelpTOCNode>
+              <HelpTOCNode Id="a0518db8-070a-4be0-8e82-2533ba3e1d9b" Title="Fatal Method " Url="html/D4BA8CC4.htm">
+                <HelpTOCNode Title="Fatal Method (Func(String))" Url="html/532C09C9.htm" />
+                <HelpTOCNode Title="Fatal Method (String, Object[])" Url="html/30DD6E0B.htm" />
+              </HelpTOCNode>
+              <HelpTOCNode Id="69af0bc4-4e9a-4574-828d-8751b14b7449" Title="Info Method " Url="html/CAB28E7A.htm">
+                <HelpTOCNode Title="Info Method (Func(String))" Url="html/D11D1955.htm" />
+                <HelpTOCNode Title="Info Method (String, Object[])" Url="html/EC564BBF.htm" />
+              </HelpTOCNode>
+              <HelpTOCNode Title="InitializeFor Method " Url="html/CD195880.htm" />
+              <HelpTOCNode Id="f3e1c3f7-a21e-4efe-945b-03ffebe2f2df" Title="Warn Method " Url="html/3075152A.htm">
+                <HelpTOCNode Title="Warn Method (Func(String))" Url="html/D1867BAD.htm" />
+                <HelpTOCNode Title="Warn Method (String, Object[])" Url="html/AF011573.htm" />
+              </HelpTOCNode>
+            </HelpTOCNode>
+          </HelpTOCNode>
+          <HelpTOCNode Title="ILog(T) Interface" Url="html/503A7E39.htm" />
+          <HelpTOCNode Id="0b5ec95e-45b5-4ee1-8bc4-f3b45075dbd2" Title="Log Class" Url="html/65AE9565.htm">
+            <HelpTOCNode Id="5448219a-4e62-489d-8a70-0b33296f4f2c" Title="Log Methods" Url="html/4A1756A7.htm">
+              <HelpTOCNode Title="GetLoggerFor Method " Url="html/1E3CFDB3.htm" />
+              <HelpTOCNode Id="4191d7b0-3059-43fb-aed5-daea1d830019" Title="InitializeWith Method " Url="html/E821621.htm">
+                <HelpTOCNode Title="InitializeWith(T) Method " Url="html/60229D19.htm" />
+                <HelpTOCNode Title="InitializeWith Method (ILog)" Url="html/E6F3B64A.htm" />
+              </HelpTOCNode>
+            </HelpTOCNode>
+          </HelpTOCNode>
+          <HelpTOCNode Id="05c4f4bb-7c1f-4c46-b96c-38d3bef9f264" Title="LogExtensions Class" Url="html/747B23B.htm">
+            <HelpTOCNode Id="5d782875-95d8-432d-97e5-4015d1d691c8" Title="LogExtensions Methods" Url="html/16C193D.htm">
+              <HelpTOCNode Title="FormatWith Method " Url="html/3953BF65.htm" />
+              <HelpTOCNode Id="e6595779-51bc-42db-bf38-b8a6dc66a55a" Title="Log Method " Url="html/AF67011.htm">
+                <HelpTOCNode Title="Log Method (String)" Url="html/2D503FC8.htm" />
+                <HelpTOCNode Title="Log(T) Method (T)" Url="html/5425BB7D.htm" />
+              </HelpTOCNode>
+            </HelpTOCNode>
+          </HelpTOCNode>
+          <HelpTOCNode Id="c442147d-7b5d-4c10-ab72-027105760ab9" Title="NullLog Class" Url="html/7BD6CFC6.htm">
+            <HelpTOCNode Title="NullLog Constructor " Url="html/362ED1C0.htm" />
+            <HelpTOCNode Id="373a09f0-a7f3-49c5-8bfb-01cbf055f5b4" Title="NullLog Methods" Url="html/81FECE12.htm">
+              <HelpTOCNode Id="0e871a06-2cd1-4f3a-a07b-e93847e2f55b" Title="Debug Method " Url="html/B4B099D9.htm">
+                <HelpTOCNode Title="Debug Method (Func(String))" Url="html/6AA81FD0.htm" />
+                <HelpTOCNode Title="Debug Method (String, Object[])" Url="html/F6F51064.htm" />
+              </HelpTOCNode>
+              <HelpTOCNode Id="0de24218-e2fe-488d-a75e-13f1cd227a98" Title="Error Method " Url="html/F06532E0.htm">
+                <HelpTOCNode Title="Error Method (Func(String))" Url="html/B7F7A055.htm" />
+                <HelpTOCNode Title="Error Method (String, Object[])" Url="html/F3D09C37.htm" />
+              </HelpTOCNode>
+              <HelpTOCNode Id="dddcf116-de3c-4963-a18a-def3fb10bc3a" Title="Fatal Method " Url="html/6098BC88.htm">
+                <HelpTOCNode Title="Fatal Method (Func(String))" Url="html/EC767E57.htm" />
+                <HelpTOCNode Title="Fatal Method (String, Object[])" Url="html/77DD309.htm" />
+              </HelpTOCNode>
+              <HelpTOCNode Id="b78255ec-88ea-445b-b044-28d03fa9d1be" Title="Info Method " Url="html/1FBF9FB2.htm">
+                <HelpTOCNode Title="Info Method (Func(String))" Url="html/68C5D70B.htm" />
+                <HelpTOCNode Title="Info Method (String, Object[])" Url="html/F9B0E381.htm" />
+              </HelpTOCNode>
+              <HelpTOCNode Title="InitializeFor Method " Url="html/FDC22A92.htm" />
+              <HelpTOCNode Id="fb6b0544-d7a1-45b3-b8d5-38fa9a58d147" Title="Warn Method " Url="html/8FE7546E.htm">
+                <HelpTOCNode Title="Warn Method (Func(String))" Url="html/7332E56F.htm" />
+                <HelpTOCNode Title="Warn Method (String, Object[])" Url="html/FB9CE539.htm" />
+              </HelpTOCNode>
+            </HelpTOCNode>
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="f04bec7a-d366-4b77-ba36-47f6923445b8" Title="Castle.Services.Providers Namespace" Url="html/166523D0.htm">
+          <HelpTOCNode Id="aa614b25-2763-4fc1-979f-246bf93a67e8" Title="IDataContext Interface" Url="html/675AD2F6.htm">
+            <HelpTOCNode Id="522125a9-84aa-45d1-84f3-74011bdcfa86" Title="IDataContext Methods" Url="html/EAC09396.htm">
+              <HelpTOCNode Title="AsQueryable(T) Method " Url="html/87B1E868.htm" />
+              <HelpTOCNode Id="d2e30ea7-5489-45fc-9017-6f2a7385b2ef" Title="Delete Method " Url="html/C1D01DC9.htm">
+                <HelpTOCNode Title="Delete(T) Method (Int32)" Url="html/58750E8D.htm" />
+                <HelpTOCNode Title="Delete(T) Method (T)" Url="html/DF470B47.htm" />
+              </HelpTOCNode>
+              <HelpTOCNode Title="Find(T) Method " Url="html/E9042B69.htm" />
+              <HelpTOCNode Title="Get(T) Method " Url="html/3D5DFD74.htm" />
+              <HelpTOCNode Title="Save(T) Method " Url="html/BE2EDEE1.htm" />
+            </HelpTOCNode>
+          </HelpTOCNode>
+          <HelpTOCNode Id="580619fe-faad-4762-9cbe-48fe14e96857" Title="ISourceProvider Interface" Url="html/8109FE41.htm">
+            <HelpTOCNode Id="923b536b-c775-4d5f-9ea9-fa72377ebb47" Title="ISourceProvider Methods" Url="html/78E50EAB.htm">
+              <HelpTOCNode Title="GetFileContent Method " Url="html/63A5D9D7.htm" />
+              <HelpTOCNode Title="GetFiles Method " Url="html/D07E97E9.htm" />
+              <HelpTOCNode Title="GetHistory Method " Url="html/2D7E6B46.htm" />
+            </HelpTOCNode>
+          </HelpTOCNode>
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>
