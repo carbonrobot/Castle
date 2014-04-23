@@ -22,13 +22,13 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="@IsActive("source")"><a href="/">Source</a></li>
-                    <li class="@IsActive("api")"><a href="/peek">API</a></li>
+                    <li class="@IsActive("library")"><a href="/library">Library</a></li>
                 </ul>
                 <p class="navbar-text navbar-right">@User.Identity.Name</p>
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="body-content">
         @RenderBody()
         <hr />
         <footer>

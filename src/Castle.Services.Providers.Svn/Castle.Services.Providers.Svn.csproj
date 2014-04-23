@@ -31,11 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SharpSvn">
-      <HintPath>..\packages\SharpSvn.1.8-x86.1.8005.2830\lib\net20\SharpSvn.dll</HintPath>
+    <Reference Include="SharpSvn, Version=1.8008.3178.19, Culture=neutral, PublicKeyToken=d729672594885a28, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SharpSvn.1.8-x86.1.8008.3178.19\lib\net40\SharpSvn.dll</HintPath>
     </Reference>
-    <Reference Include="SharpSvn.UI">
-      <HintPath>..\packages\SharpSvn.1.8-x86.1.8005.2830\lib\net20\SharpSvn.UI.dll</HintPath>
+    <Reference Include="SharpSvn.UI, Version=1.8008.3178.19, Culture=neutral, PublicKeyToken=33789aa53ca44aa9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SharpSvn.1.8-x86.1.8008.3178.19\lib\net40\SharpSvn.UI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -51,9 +53,6 @@
     <Compile Include="SvnSourceProviderOptions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Castle.Domain\Castle.Domain.csproj">
       <Project>{52ec6d51-0d2c-48fd-83ef-b416756c9828}</Project>
       <Name>Castle.Domain</Name>
@@ -62,6 +61,9 @@
       <Project>{719c965d-1ef9-4d67-b481-98687a865895}</Project>
       <Name>Castle.Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
