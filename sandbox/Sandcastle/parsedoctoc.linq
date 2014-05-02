@@ -22,7 +22,7 @@ public static class Parser
 		foreach(var node in element.Elements()){
 			sb.Append(tab, depth);
 			sb.AppendFormat(linkFormat, node.Attribute("Url").Value, node.Attribute("Title").Value);
-			sb.Append(newline);
+			sb.AppendFormat(linkFormat, node.Attribute("Url").Value, node.Attribute("Title").Value);sb.Append(newline);
 			
 			if(node.HasElements){
 				sb.Append(tab, depth);
