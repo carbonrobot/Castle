@@ -29,7 +29,13 @@
         </div>
     </div>
     <div class="body-content">
-        @RenderBody()
+        <div class="container">
+            @RenderBody()
+
+        </div>
+    </div>
+
+    <div class="container">
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - <a href="http://www.github.com/carbonatethis/">carbonatethis</a></p>
@@ -42,8 +48,10 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
-@helper IsActive(string group) { 
-    if(ViewBag.Group == group){
+@helper IsActive(string group)
+{
+    if (ViewBag.Group == group)
+    {
         <text>active</text>
     }
 }
