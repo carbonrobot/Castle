@@ -1,0 +1,31 @@
+﻿<div class="tab-pane active" id="commits">
+
+    <div class="source-history ng-cloak">
+
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                Last 30 days
+            </div>
+
+            <ul class="commit-group">
+                <li class="commit-group-item" data-ng-repeat="entry in history">
+                    <img src="/content/images/ninja-64.png" alt="{{ entry.Author }}" width="36" height="36" />
+                    <p class="commit-message">{{ entry.LogMessage }}</p>
+                    <div class="commit-meta">
+                        <div class="commit-links">
+                            <a class="btn btn-default btn-sm" href="#history">Revision {{ entry.Revision }} <span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+                        </div>
+                        <div class="commit-author">
+                            <span class="commit-author-name">{{ entry.Author }}</span>
+                            <span class="text-muted">committed {{ entry.RelativeTime }}</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+
+        </div>
+
+    </div>
+
+</div>

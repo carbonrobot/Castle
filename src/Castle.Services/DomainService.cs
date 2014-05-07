@@ -41,7 +41,7 @@ namespace Castle.Services
         {
             Action func = () =>
             {
-                var repository = this.DataContext.AsQueryable<Project>().Single(x => x.Key.Equals(key, StringComparison.InvariantCultureIgnoreCase));
+                var repository = this.DataContext.AsQueryable<Project>().Single(x => x.Key.Equals(key, StringComparison.OrdinalIgnoreCase));
                 this.DataContext.Delete(repository);
             };
             return this.Execute(func);
@@ -54,7 +54,7 @@ namespace Castle.Services
         {
             Action func = () =>
             {
-                var repository = this.DataContext.AsQueryable<Repository>().Single(x => x.Key.Equals(key, StringComparison.InvariantCultureIgnoreCase));
+                var repository = this.DataContext.AsQueryable<Repository>().Single(x => x.Key.Equals(key, StringComparison.OrdinalIgnoreCase));
                 this.DataContext.Delete(repository);
             };
             return this.Execute(func);
@@ -69,7 +69,7 @@ namespace Castle.Services
             Func<Project> func = () =>
             {
                 var query = (from p in this.DataContext.AsQueryable<Project>(x => x.Repository)
-                             where p.Key.Equals(key, StringComparison.InvariantCultureIgnoreCase)
+                             where p.Key.Equals(key, StringComparison.OrdinalIgnoreCase)
                              select p);
 
                 return query.Single();
@@ -85,7 +85,7 @@ namespace Castle.Services
         {
             Func<Project> func = () =>
             {
-                var repository = this.DataContext.AsQueryable<Repository>().Single(x => x.Key.Equals(repositoryKey, StringComparison.InvariantCultureIgnoreCase));
+                var repository = this.DataContext.AsQueryable<Repository>().Single(x => x.Key.Equals(repositoryKey, StringComparison.OrdinalIgnoreCase));
                 var project = new Project()
                 {
                     RepositoryId = repository.Id,
@@ -107,7 +107,7 @@ namespace Castle.Services
         {
             Func<IEnumerable<SourceLogEntry>> func = () =>
             {
-                var project = this.DataContext.AsQueryable<Project>().Single(x => x.Key.Equals(key, StringComparison.InvariantCultureIgnoreCase));
+                var project = this.DataContext.AsQueryable<Project>().Single(x => x.Key.Equals(key, StringComparison.OrdinalIgnoreCase));
                 var history = this.SourceProvider.GetHistory(project.Path, days);
                 return history.OrderByDescending(x => x.Time);
             };
@@ -158,7 +158,7 @@ namespace Castle.Services
             Func<Repository> func = () =>
             {
                 var query = (from p in this.DataContext.AsQueryable<Repository>(x => x.Projects)
-                             where p.Key.Equals(key, StringComparison.InvariantCultureIgnoreCase)
+                             where p.Key.Equals(key, StringComparison.OrdinalIgnoreCase)
                              select p);
 
                 return query.Single();
@@ -176,7 +176,7 @@ namespace Castle.Services
         {
             Func<IEnumerable<SourceLogEntry>> func = () =>
             {
-                var repository = this.DataContext.AsQueryable<Repository>().Single(x => x.Key.Equals(key, StringComparison.InvariantCultureIgnoreCase));
+                var repository = this.DataContext.AsQueryable<Repository>().Single(x => x.Key.Equals(key, StringComparison.OrdinalIgnoreCase));
                 var history = this.SourceProvider.GetHistory(repository.Path, days);
                 return history.OrderByDescending(x => x.Time);
             };

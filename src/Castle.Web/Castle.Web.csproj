@@ -212,6 +212,7 @@
     <Content Include="Content\css\bootstrap\bootstrap-theme.css.map" />
     <Content Include="Content\css\bootstrap\bootstrap.css.map" />
     <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\controllers\historyController.js" />
     <Content Include="Scripts\app\controllers\settingsController.js" />
     <Content Include="Scripts\app\controllers\rawController.js" />
     <Content Include="Scripts\app\controllers\fileController.js" />
@@ -233,6 +234,7 @@
     <Content Include="Scripts\vendor\bootstrap.min.js" />
     <Content Include="NLog.config" />
     <Content Include="Views\Library\Index.cshtml" />
+    <Content Include="Views\Project\_History.html" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

@@ -21,6 +21,10 @@ castle.app = angular.module('castle.app', ['ngRoute', 'castle.app.services', 'ca
                 controller: 'SettingsController',
                 templateUrl: '/views/project/_settings.html'
             }).
+            when('/history', {
+                controller: 'HistoryController',
+                templateUrl: '/views/project/_history.html'
+            }).
             otherwise({
                 redirectTo: '/source',
             });

@@ -50,5 +50,21 @@ namespace Castle.Services
             };
             return this.Execute(func);
         }
+
+        /// <summary>
+        /// Gets the recent change history for a path.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <param name="days">The number of days to include.</param>
+        /// <returns>ServiceResponse&lt;IEnumerable&lt;SourceLogEntry&gt;&gt;.</returns>
+        public ServiceResponse<IEnumerable<SourceLogEntry>> GetHistory(string path, int days)
+        {
+            Func<IEnumerable<SourceLogEntry>> func = () =>
+            {
+                var history = this.SourceProvider.GetHistory(path, days);
+                return history.OrderByDescending(x => x.Time);
+            };
+            return this.Execute(func);
+        }
     }
 }

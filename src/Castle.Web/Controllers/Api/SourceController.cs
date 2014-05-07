@@ -21,6 +21,16 @@ namespace Castle.Web.Controllers.Api
         }
 
         [HttpGet]
+        [Route("history")]
+        public IEnumerable<SourceLogEntry> Index(string path, int days)
+        {
+            var response = this.SourceService.GetHistory(path, days);
+            EnsureReponse(response);
+
+            return response.Result;
+        }
+
+        [HttpGet]
         [Route("")]
         public IEnumerable<SourceFileInfo> Index(string path)
         {
