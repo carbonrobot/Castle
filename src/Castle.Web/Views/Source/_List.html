@@ -6,8 +6,10 @@
         </ol>
     </div>
 
-    <div class="panel panel-info ng-cloak" >
-        <div class="panel-heading">{{ lastChange }}</div>
+    <div class="panel panel-info ng-cloak">
+        <div class="panel-heading">
+            <div class="panel-title">{{ lastChange }}</div>
+        </div>
         <table class="table" data-ng-hide="loadingFiles">
             <tbody>
                 <tr data-ng-repeat="entry in files">
@@ -22,7 +24,7 @@
 
     <div class="panel panel-default" data-ng-show="isReadmeAvailable">
         <div class="panel-heading">
-            <h3 class="panel-title"><span class="glyphicon glyphicon-file"></span> README.md</h3>
+            <div class="panel-title"><span class="glyphicon glyphicon-file"></span> README.md</div>
         </div>
         <div class="panel-body" data-ng-bind-html="openFile">
         </div>
