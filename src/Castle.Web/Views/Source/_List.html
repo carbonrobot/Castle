@@ -2,19 +2,20 @@
 
     <div class="source-header">
         <ol class="breadcrumb">
+            <li>svn</li>
             <li data-ng-repeat="link in paths"><a href="#/source/{{link.path}}">{{ link.name }}</a></li>
         </ol>
     </div>
 
     <div class="panel panel-info ng-cloak">
         <div class="panel-heading">
-            <div class="panel-title">{{ lastChange }}</div>
+            {{ lastChange }}
         </div>
         <table class="table" data-ng-hide="loadingFiles">
             <tbody>
                 <tr data-ng-repeat="entry in files">
-                    <td data-ng-if="entry.Kind == 1"><span class="glyphicon glyphicon-folder-close"></span> <a href="#/source/{{ entry.Path }}">{{ entry.Name }}</a></td>
-                    <td data-ng-if="entry.Kind != 1"><span class="glyphicon glyphicon-file"></span> <a href="#/raw/{{ entry.Path }}">{{ entry.Name }}</a></td>
+                    <td data-ng-if="entry.Kind == 1"><span class="fa fa-folder"></span> <a href="#/source/{{ entry.Path }}" class="source-entry-name">{{ entry.Name }}</a></td>
+                    <td data-ng-if="entry.Kind != 1"><span class="fa fa-file"></span> <a href="#/raw/{{ entry.Path }}" class="source-entry-name">{{ entry.Name }}</a></td>
                     <td class="text-muted text-right">{{ entry.Author }}</td>
                     <td class="text-muted text-right">{{ entry.ChangeRelativeTime }}</td>
                 </tr>
@@ -24,7 +25,7 @@
 
     <div class="panel panel-default" data-ng-show="isReadmeAvailable">
         <div class="panel-heading">
-            <div class="panel-title"><span class="glyphicon glyphicon-file"></span> README.md</div>
+            <span class="fa fa-file"></span> <span class="source-entry-name">README.md</span>
         </div>
         <div class="panel-body" data-ng-bind-html="openFile">
         </div>

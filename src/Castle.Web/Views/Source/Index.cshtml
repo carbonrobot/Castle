@@ -2,41 +2,33 @@
 @{
     ViewBag.Group = "source";
 }
-<div class="source-header">
-    <div class="container">
-        <h1>Castle</h1>
-        <p>Source control that doesn't suck.</p>
-    </div>
-</div>
+@*<div class="source-header">
+        <div class="container">
+            <h1>Castle</h1>
+            <p>Source control that doesn't suck.</p>
+        </div>
+    </div>*@
 
 <div class="container">
-    <div class="row">
-
-        <div class="col-md-4 col-md-push-8">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="clearfix">
-                        <div class="pull-left">
-                            Repositories <span class="small">(@Model.RepositoryList.Count())</span>
-                        </div>
-                        <div class="pull-right">
-                            <a href="/repository/create" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span> New Repository</a>
-                        </div>
-                    </div>
-                </div>
-                <ul class="list-group">
-                    @foreach (var item in Model.RepositoryList)
-                    {
-                        <li class="list-group-item">
-                            <a href="/source/@item.Key">@item.Name</a>
-                        </li>
-                    }
-                </ul>
-            </div>
-        </div>
-
-        <div class="col-md-8 col-md-pull-4">
-
+    <div class="page-header clearfix">
+        <h1 class="page-title pull-left">
+            Repositories
+        </h1>
+        <div class="pull-right">
+            <a href="/repository/create" class="btn btn-default btn-sm"><span class="fa fa-plus"></span></a>
         </div>
     </div>
+
+    <div class="panel panel-default">
+
+        <ul class="list-group">
+            @foreach (var item in Model.RepositoryList)
+            {
+                <li class="list-group-item">
+                    <a href="/source/@item.Key">@item.Name</a>
+                </li>
+            }
+        </ul>
+    </div>
+
 </div>

@@ -7,22 +7,19 @@ namespace Castle.Web
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                    "~/Scripts/vendor/jquery-{version}.js"));
-
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                     "~/Scripts/vendor/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                    "~/Scripts/vendor/bootstrap.js"));
-
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                     "~/Scripts/vendor/require.js",
-                    "~/Scripts/vendor/angular.js",
-                    "~/Scripts/vendor/angular-route.js",
-                    "~/Scripts/vendor/angular-resource.js",
-                    "~/Scripts/vendor/angular-animate.js",
-                    "~/Scripts/vendor/angular-sanitize.js",
+                    "~/Scripts/vendor/bootstrap/collapse.js",
+                    "~/Scripts/vendor/bootstrap/tab.js",
+                    "~/Scripts/vendor/bootstrap/transition.js",
+                    "~/Scripts/vendor/angular/angular.js",
+                    "~/Scripts/vendor/angular/angular-animate.js",
+                    "~/Scripts/vendor/angular/angular-resource.js",
+                    "~/Scripts/vendor/angular/angular-route.js",
+                    "~/Scripts/vendor/angular/angular-sanitize.js", 
                     "~/Scripts/vendor/moment.js",
                     "~/Scripts/app/app.js",
                     "~/Scripts/app/services/*.js",
@@ -30,8 +27,8 @@ namespace Castle.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                     "~/Content/css/bootstrap/bootstrap.css",
-                    "~/Content/css/castle.css",
-                    "~/Content/css/castle-loader.css"));
+                    "~/Content/css/fa/font-awesome.css",
+                    "~/Content/css/castle.css"));
         }
     }
 }

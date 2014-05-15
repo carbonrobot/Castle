@@ -4,34 +4,33 @@
     ViewBag.Group = "source";
 }
 
-<div class="page-header">
-    <h1 class="page-title"><a href="/source/@Model.Project.Repository.Key">@Model.Project.Repository.Name</a> / <strong><a href="/source/@Model.Project.Repository.Key/@Model.Project.Key">@Model.Project.Name</a></strong></h1>
-</div>
+<div class="container">
+    <div class="page-header">
+        <h1 class="page-title"><a href="/source/@Model.Project.Repository.Key">@Model.Project.Repository.Name</a> / <a href="/source/@Model.Project.Repository.Key/@Model.Project.Key">@Model.Project.Name</a></h1>
+    </div>
 
-<div class="row" data-ng-controller="ProjectController">
+    <div class="row" data-ng-controller="ProjectController">
 
-    <div class="col-md-12" data-ng-init="init('@Model.Project.Key', '@Model.Project.Path');">
-        <ul class="nav nav-tabs">
-            <li class="active"><a href="#source" data-toggle="tab"><span class="glyphicon glyphicon-qrcode"></span> Source</a></li>
-            <li><a href="#history" data-toggle="tab"><span class="glyphicon glyphicon-flash"></span> History</a></li>
-            @*
-                <li><a href="#branches" data-toggle="tab"><span class="glyphicon glyphicon-tags"></span> Branches</a></li>
-                <li><a href="#contributors" data-toggle="tab"><span class="glyphicon glyphicon-globe"></span> Contributors</a></li>*@
-            <li><a href="#settings" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
-        </ul>
+        <div class="col-md-12" data-ng-init="init('@Model.Project.Key', '@Model.Project.Path');">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#source" data-toggle="tab"><span class="fa fa-qrcode"></span> Source</a></li>
+                <li><a href="#history" data-toggle="tab"><span class="fa fa-flash"></span> History</a></li>
+                <li><a href="#settings" data-toggle="tab"><span class="fa fa-cog"></span> Settings</a></li>
+            </ul>
 
-        <div class="tab-content">
-            <!-- angular controls tabs w/routing -->
-            <div data-ng-view></div>
+            <div class="tab-content">
+                <!-- angular controls tabs w/routing -->
+                <div data-ng-view></div>
+            </div>
+
         </div>
 
     </div>
-
 </div>
 @section scripts{
     <script>
         $(function () {
-            // on load of the page: switch to the currently selected tab
+            // on load of the page: switch to the currently selected tab if one specified in url
             $('.nav-tabs a[href="' + window.location.hash.replace('/', '') + '"]').trigger('click');
         });
     </script>

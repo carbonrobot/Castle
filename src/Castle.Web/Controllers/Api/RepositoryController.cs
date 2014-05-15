@@ -23,7 +23,7 @@ namespace Castle.Web.Controllers.Api
         public IEnumerable<Domain.SourceLogEntry> RecentRepositoryHistory(string key)
         {
             var response = this.DomainService.GetRepositoryHistory(key, 7);
-            EnsureReponse(response);
+            EnsureResponse(response);
             
             return response.Result;
         }

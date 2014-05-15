@@ -25,7 +25,7 @@ namespace Castle.Web.Controllers.Api
         public IEnumerable<SourceLogEntry> Index(string path, int days)
         {
             var response = this.SourceService.GetHistory(path, days);
-            EnsureReponse(response);
+            EnsureResponse(response);
 
             return response.Result;
         }
@@ -35,7 +35,7 @@ namespace Castle.Web.Controllers.Api
         public IEnumerable<SourceFileInfo> Index(string path)
         {
             var response = this.SourceService.GetFileInfo(path);
-            EnsureReponse(response);
+            EnsureResponse(response);
 
             return response.Result;
         }
@@ -45,7 +45,7 @@ namespace Castle.Web.Controllers.Api
         public HttpResponseMessage Raw(string path)
         {
             var response = this.SourceService.GetFileContent(path);
-            EnsureReponse(response);
+            EnsureResponse(response);
 
             return new HttpResponseMessage(HttpStatusCode.OK)
             {

@@ -193,24 +193,34 @@
     <Compile Include="Controllers\Api\SourceController.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\css\bootstrap\bootstrap-theme.css" />
-    <Content Include="Content\css\bootstrap\bootstrap-theme.min.css" />
-    <Content Include="Content\css\bootstrap\bootstrap.css" />
-    <Content Include="Content\css\bootstrap\bootstrap.min.css" />
-    <Content Include="Content\css\castle-loader.css" />
+    <Content Include="Content\css\bootstrap\bootstrap.css">
+      <DependentUpon>bootstrap.less</DependentUpon>
+    </Content>
+    <Content Include="Content\css\bootstrap\variables.css">
+      <DependentUpon>variables.less</DependentUpon>
+    </Content>
+    <Content Include="Content\css\utils.less" />
+    <Content Include="Content\css\commit-history.less" />
+    <None Include="Content\css\loader.less" />
+    <Content Include="Content\css\castle.css">
+      <DependentUpon>castle.less</DependentUpon>
+    </Content>
+    <Content Include="Content\css\fa\font-awesome.css" />
+    <Content Include="Content\css\fa\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\images\castle-white.png" />
     <Content Include="Content\images\castle.png" />
     <Content Include="Content\images\ninja-512.png" />
     <Content Include="Content\images\ninja-64.png" />
     <Content Include="favicon.ico" />
-    <Content Include="Content\css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\css\bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\css\castle.css" />
-    <Content Include="Content\css\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\css\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\css\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\css\bootstrap\bootstrap-theme.css.map" />
-    <Content Include="Content\css\bootstrap\bootstrap.css.map" />
+    <Content Include="Content\css\castle.css.map">
+      <DependentUpon>castle.css</DependentUpon>
+    </Content>
+    <None Include="Content\css\castle.less" />
+    <Content Include="Content\css\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\css\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\css\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\controllers\historyController.js" />
     <Content Include="Scripts\app\controllers\settingsController.js" />
@@ -220,21 +230,81 @@
     <Content Include="Scripts\app\controllers\repositoryController.js" />
     <Content Include="Scripts\app\services\projectService.js" />
     <Content Include="Scripts\app\services\sourceService.js" />
-    <Content Include="Scripts\vendor\angular-animate.js" />
-    <Content Include="Scripts\vendor\angular-animate.min.js" />
-    <Content Include="Scripts\vendor\angular-resource.js" />
-    <Content Include="Scripts\vendor\angular-resource.min.js" />
-    <Content Include="Scripts\vendor\angular-route.js" />
-    <Content Include="Scripts\vendor\angular-route.min.js" />
-    <Content Include="Scripts\vendor\angular-sanitize.js" />
-    <Content Include="Scripts\vendor\angular-sanitize.min.js" />
-    <Content Include="Scripts\vendor\angular.js" />
-    <Content Include="Scripts\vendor\angular.min.js" />
-    <Content Include="Scripts\vendor\bootstrap.js" />
-    <Content Include="Scripts\vendor\bootstrap.min.js" />
+    <Content Include="Scripts\vendor\angular\angular-animate.js" />
+    <Content Include="Scripts\vendor\angular\angular-resource.js" />
+    <Content Include="Scripts\vendor\angular\angular-route.js" />
+    <Content Include="Scripts\vendor\angular\angular-sanitize.js" />
+    <Content Include="Scripts\vendor\angular\angular.js" />
     <Content Include="NLog.config" />
+    <Content Include="Scripts\vendor\bootstrap\affix.js" />
+    <Content Include="Scripts\vendor\bootstrap\alert.js" />
+    <Content Include="Scripts\vendor\bootstrap\button.js" />
+    <Content Include="Scripts\vendor\bootstrap\carousel.js" />
+    <Content Include="Scripts\vendor\bootstrap\collapse.js" />
+    <Content Include="Scripts\vendor\bootstrap\dropdown.js" />
+    <Content Include="Scripts\vendor\bootstrap\modal.js" />
+    <Content Include="Scripts\vendor\bootstrap\popover.js" />
+    <Content Include="Scripts\vendor\bootstrap\scrollspy.js" />
+    <Content Include="Scripts\vendor\bootstrap\tab.js" />
+    <Content Include="Scripts\vendor\bootstrap\tooltip.js" />
+    <Content Include="Scripts\vendor\bootstrap\transition.js" />
+    <Content Include="Scripts\vendor\jquery-1.11.0.js" />
+    <Content Include="Scripts\vendor\jquery-1.11.0.min.js">
+      <DependentUpon>jquery-1.11.0.js</DependentUpon>
+    </Content>
     <Content Include="Views\Library\Index.cshtml" />
     <Content Include="Views\Project\_History.html" />
+    <Content Include="Content\css\bootstrap\alerts.less" />
+    <Content Include="Content\css\bootstrap\badges.less" />
+    <Content Include="Content\css\bootstrap\bootstrap.less" />
+    <Content Include="Content\css\bootstrap\breadcrumbs.less" />
+    <Content Include="Content\css\bootstrap\button-groups.less" />
+    <Content Include="Content\css\bootstrap\buttons.less" />
+    <Content Include="Content\css\bootstrap\carousel.less" />
+    <Content Include="Content\css\bootstrap\close.less" />
+    <Content Include="Content\css\bootstrap\code.less" />
+    <Content Include="Content\css\bootstrap\component-animations.less" />
+    <Content Include="Content\css\bootstrap\dropdowns.less" />
+    <Content Include="Content\css\bootstrap\forms.less" />
+    <Content Include="Content\css\bootstrap\glyphicons.less" />
+    <Content Include="Content\css\bootstrap\grid.less" />
+    <Content Include="Content\css\bootstrap\input-groups.less" />
+    <Content Include="Content\css\bootstrap\jumbotron.less" />
+    <Content Include="Content\css\bootstrap\labels.less" />
+    <Content Include="Content\css\bootstrap\list-group.less" />
+    <Content Include="Content\css\bootstrap\media.less" />
+    <Content Include="Content\css\bootstrap\mixins.less" />
+    <Content Include="Content\css\bootstrap\modals.less" />
+    <Content Include="Content\css\bootstrap\navbar.less" />
+    <Content Include="Content\css\bootstrap\navs.less" />
+    <Content Include="Content\css\bootstrap\normalize.less" />
+    <Content Include="Content\css\bootstrap\pager.less" />
+    <Content Include="Content\css\bootstrap\pagination.less" />
+    <Content Include="Content\css\bootstrap\panels.less" />
+    <Content Include="Content\css\bootstrap\popovers.less" />
+    <Content Include="Content\css\bootstrap\print.less" />
+    <Content Include="Content\css\bootstrap\progress-bars.less" />
+    <Content Include="Content\css\bootstrap\responsive-utilities.less" />
+    <Content Include="Content\css\bootstrap\scaffolding.less" />
+    <Content Include="Content\css\bootstrap\tables.less" />
+    <Content Include="Content\css\bootstrap\theme.less" />
+    <Content Include="Content\css\bootstrap\thumbnails.less" />
+    <Content Include="Content\css\bootstrap\tooltip.less" />
+    <Content Include="Content\css\bootstrap\type.less" />
+    <Content Include="Content\css\bootstrap\utilities.less" />
+    <Content Include="Content\css\bootstrap\variables.less" />
+    <Content Include="Content\css\bootstrap\wells.less" />
+    <Content Include="Content\css\bootstrap\bootstrap.css.map">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\fa\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\css\fa\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\css\fa\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\css\fa\fonts\FontAwesome.otf" />
+    <Content Include="Scripts\vendor\jquery-1.11.0.min.js.map">
+      <DependentUpon>jquery-1.11.0.min.js</DependentUpon>
+    </Content>
+    <Content Include="Content\css\variables.less" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -254,14 +324,6 @@
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Scripts\vendor\angular-resource.min.js.map" />
-    <Content Include="Scripts\vendor\angular.min.js.map" />
-    <Content Include="Scripts\vendor\angular-route.min.js.map" />
-    <Content Include="Scripts\vendor\angular-animate.min.js.map" />
-    <Content Include="Scripts\vendor\angular-sanitize.min.js.map" />
-    <None Include="Scripts\vendor\jquery-2.1.0.intellisense.js" />
-    <Content Include="Scripts\vendor\jquery-2.1.0.js" />
-    <Content Include="Scripts\vendor\jquery-2.1.0.min.js" />
     <Content Include="Scripts\vendor\marked.js" />
     <Content Include="Scripts\vendor\modernizr-2.7.2.js" />
     <Content Include="Scripts\vendor\moment.js" />
@@ -281,7 +343,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Source\Index.cshtml" />
-    <Content Include="Scripts\vendor\jquery-2.1.0.min.map" />
     <Content Include="Views\Shared\_Loader.cshtml" />
     <Content Include="Views\Source\_History.cshtml" />
     <Content Include="Views\Repository\Index.cshtml" />

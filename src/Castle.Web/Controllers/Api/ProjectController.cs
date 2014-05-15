@@ -23,7 +23,7 @@ namespace Castle.Web.Controllers.Api
         public Project Get(string key)
         {
             var response = this.DomainService.GetProject(key);
-            EnsureReponse(response);
+            EnsureResponse(response);
 
             return response.Result;
         }
@@ -33,7 +33,7 @@ namespace Castle.Web.Controllers.Api
         public IEnumerable<Domain.SourceLogEntry> RecentProjectHistory(string key)
         {
             var response = this.DomainService.GetProjectHistory(key, 7);
-            EnsureReponse(response);
+            EnsureResponse(response);
 
             return response.Result;
         }
@@ -42,7 +42,7 @@ namespace Castle.Web.Controllers.Api
         public Project Update(Project project)
         {
             var response = this.DomainService.UpdateProject(project);
-            EnsureReponse(response);
+            EnsureResponse(response);
 
             return response.Result;
         }
@@ -51,7 +51,7 @@ namespace Castle.Web.Controllers.Api
         public void Delete(string key)
         {
             var response = this.DomainService.DeleteProject(key);
-            EnsureReponse(response);
+            EnsureResponse(response);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Castle.Web.Controllers.Api
         /// Ensures the reponse does not contain an error or null result
         /// </summary>
         /// <param name="response">The response.</param>
-        protected void EnsureReponse<T>(ServiceResponse<T> response)
+        protected void EnsureResponse<T>(ServiceResponse<T> response)
         {
             if (response.HasError)
                 throw new HttpResponseException(HttpStatusCode.InternalServerError);
@@ -27,7 +27,7 @@ namespace Castle.Web.Controllers.Api
         /// Ensures the reponse does not contain an error or null result
         /// </summary>
         /// <param name="response">The response.</param>
-        protected void EnsureReponse(ServiceResponse response)
+        protected void EnsureResponse(ServiceResponse response)
         {
             if (response.HasError)
                 throw new HttpResponseException(HttpStatusCode.InternalServerError);

@@ -4,45 +4,45 @@
     ViewBag.Group = "source";
 }
 
-<div class="page-header">
-    <h1 class="page-title"><a href="/source/@Model.Repository.Key">@Model.Repository.Name</a></h1>
-</div>
-
-<div class="row" data-ng-controller="RepositoryController">
-
-    <div class="col-md-4 col-md-push-8">
-        <div class="clearfix">
-            <div class="pull-right">
-                <a href="/repository/@Model.Repository.Key/settings" class="btn btn-default">
-                    <span class="glyphicon glyphicon-cog"></span>
-                </a>
-            </div>
+<div class="container">
+    <div class="page-header clearfix">
+        <h1 class="page-title pull-left">@Model.Repository.Name</h1>
+        <div class="pull-right">
+            <a href="/repository/@Model.Repository.Key/settings" class="btn btn-default">
+                <span class="fa fa-cog"></span>
+            </a>
         </div>
+    </div>
 
-        <div class="panel panel-default drop">
-            <div class="panel-heading">
-                <div class="clearfix">
-                    <div class="pull-left">
-                        Projects <span class="small">(@Model.Repository.Projects.Count())</span>
-                    </div>
-                    <div class="pull-right">
-                        <a href="/repository/@Model.Repository.Key/create" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span> New Project</a>
+    <div class="row" data-ng-controller="RepositoryController">
+
+        <!-- The use of push & pull reverse the column ordering on desktop, but leave it normal for mobile -->
+        <div class="col-md-4 col-md-push-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="clearfix">
+                        <div class="pull-left">
+                            Projects <span class="small">(@Model.Repository.Projects.Count())</span>
+                        </div>
+                        <div class="pull-right">
+                            <a href="/repository/@Model.Repository.Key/create" class="btn btn-default btn-xs"><span class="fa fa-plus"></span> New Project</a>
+                        </div>
                     </div>
                 </div>
+                <ul class="list-group">
+                    @foreach (var item in Model.Repository.Projects)
+                    {
+                        <li class="list-group-item">
+                            <a href="/source/@Model.Repository.Key/@item.Key">@item.Name</a>
+                        </li>
+                    }
+                </ul>
             </div>
-            <ul class="list-group">
-                @foreach (var item in Model.Repository.Projects)
-                {
-                    <li class="list-group-item">
-                        <a href="/source/@Model.Repository.Key/@item.Key">@item.Name</a>
-                    </li>
-                }
-            </ul>
         </div>
-    </div>
 
-    <div class="col-md-8 col-md-pull-4" ng-init="init('@Model.Repository.Key');">
-        @Html.Partial("~/views/source/_history.cshtml")
-    </div>
+        <div class="col-md-8 col-md-pull-4" ng-init="init('@Model.Repository.Key');">
+            @Html.Partial("~/views/source/_history.cshtml")
+        </div>
 
+    </div>
 </div>
